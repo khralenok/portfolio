@@ -78,6 +78,10 @@ h3 {
     --heading-size: var(--base-size)
 }
 
+.hero {
+    --heading-size: calc(var(--base-size)/3*10);
+}
+
 p {
     --text-size: var(--base-size)
 }
