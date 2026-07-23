@@ -36,6 +36,47 @@
 
         gtag('config', 'G-4X94L96QLE');
     </script>
+    <script>
+        const youtubeApiScript = document.createElement("script");
+        youtubeApiScript.src = "https://www.youtube.com/iframe_api";
+
+        const firstScript = document.getElementsByTagName("script")[0];
+        firstScript.parentNode.insertBefore(youtubeApiScript, firstScript);
+
+        let youtubePlayer;
+        let videoViewTracked = false;
+
+        window.onYouTubeIframeAPIReady = function () {
+            youtubePlayer = new YT.Player("featured-case", {
+                events: {
+                    onStateChange: handleYouTubeStateChange,
+                },
+            });
+        };
+
+        function handleYouTubeStateChange(event) {
+            const startedPlaying = event.data === YT.PlayerState.PLAYING;
+
+            // Send only once per page load.
+            if (startedPlaying && !videoViewTracked) {
+                videoViewTracked = true;
+
+                gtag("event", "video_viewed", {
+                    video_platform: "youtube",
+                    video_title: "Cryptonix portfolio showreel",
+                });
+            }
+        }
+
+        let link = document.querySelector("#linkedin-link");
+
+        link.addEventListener("click", function () {
+            gtag("event", "linkedin_clicked", {
+                link_url: this.href,
+                link_location: this.dataset.location || "unknown",
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -45,13 +86,16 @@
             <h1 class="hero">Grigorii Khralenok<br /><span>Brand Designer</span></h1>
             <p>Brand designer with six years of experience building B2B brands and supporting marketing, product, and
                 sales teams through guidelines, templates, design systems, and high-quality visual assets.</p>
-            <div class="btns"><a class="btn" href="mailto:khralenok.g@gmail.com" target="_blank">Email</a><a
-                    class="btn secondary" href="https://www.linkedin.com/in/khralenok/" target="_blank">LinkedIn</a>
+            <div class="btns">
+                <a class="btn" href="mailto:khralenok.g@gmail.com" target="_blank">Email</a>
+                <a id="linkedin-btn" class="btn secondary" href="https://www.linkedin.com/in/khralenok/"
+                    target="_blank">LinkedIn</a>
             </div>
         </section>
         <section>
             <h2>Featured case</h2>
-            <iframe class="embedded-video" src="https://www.youtube.com/embed/vOaKJkwBweA"
+            <iframe id="featured-case" class="embedded-video"
+                src="https://www.youtube.com/embed/vOaKJkwBweA?enablejsapi=1"
                 title="Brand Identity for a Crypto Payment Product" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
