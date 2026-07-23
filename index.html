@@ -67,13 +67,6 @@
                 });
             }
         }
-
-        document.querySelector("#linkedin-btn").addEventListener("click", function () {
-            gtag("event", "linkedin_clicked", {
-                link_url: this.href,
-                link_location: this.dataset.location || "unknown",
-            });
-        });
     </script>
 </head>
 
@@ -130,7 +123,6 @@
     </footer>
     <script>
         const glow = document.querySelector('.cursor-glow');
-        console.log(glow);
         window.addEventListener('mousemove', (e) => {
             // Reveal the glow on first move
             if (glow.style.opacity === '0' || !glow.style.opacity) {
@@ -144,6 +136,13 @@
         // Optional: Hide it when the mouse leaves the window
         document.addEventListener('mouseleave', () => {
             glow.style.opacity = '0';
+        });
+
+        document.querySelector("#linkedin-btn").addEventListener("click", function () {
+            gtag("event", "linkedin_clicked", {
+                link_url: this.href,
+                link_location: this.dataset.location || "unknown",
+            });
         });
     </script>
 </body>
