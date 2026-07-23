@@ -68,9 +68,7 @@
             }
         }
 
-        let link = document.querySelector("#linkedin-btn");
-
-        link.addEventListener("click", function () {
+        document.querySelector("#linkedin-btn").addEventListener("click", function () {
             gtag("event", "linkedin_clicked", {
                 link_url: this.href,
                 link_location: this.dataset.location || "unknown",
