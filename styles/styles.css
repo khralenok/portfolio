@@ -157,7 +157,7 @@ h1 {
 }
 
 .hero-text .niche {
-    border: calc(var(--base-size)/19.2) solid grey;
+    border: calc(var(--base-size)/19.2) solid var(--color-neutral-40);
     padding: calc(var(--base-size)/4) calc(var(--base-size)/2);
     border-radius: calc(var(--base-size)/2);
 }
@@ -165,6 +165,7 @@ h1 {
 .video-container {
     display: flex;
     background-color: var(--color-neutral-60);
+    border-left: calc(var(--base-size)/19.2) solid var(--color-neutral-100);
 }
 
 .video-container iframe,
@@ -307,6 +308,7 @@ article iframe {
 
     .video-container {
         margin-bottom: calc(var(--base-size)*2);
+        border: unset;
     }
 
     .faq-container {
