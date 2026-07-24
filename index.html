@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grigorii Khralenok – Brand Designer</title>
     <meta name="description"
-        content="Multidisciplinary designer with 10 years of experience turning brand direction into consistent websites, campaigns, presentations, and design systems.">
+        content="Brand designer with 10 years of experience creating brand, marketing, and web design for B2B, fintech, and martech companies.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Grigorii Khralenok – Brand & Marketing Designer">
     <meta property="og:description"
-        content="Multidisciplinary designer with 10 years of experience turning brand direction into consistent websites, campaigns, presentations, and design systems.">
+        content="Brand designer with 10 years of experience creating brand, marketing, and web design for B2B, fintech, and martech companies.">
     <meta property="og:image" content="/img/main-cover.jpg">
     <meta property="og:url" content="https://khralenok.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Grigorii Khralenok – Brand & Marketing Designer">
     <meta name="twitter:description"
-        content="Multidisciplinary designer with 10 years of experience turning brand direction into consistent websites, campaigns, presentations, and design systems.">
+        content="Brand designer with 10 years of experience creating brand, marketing, and web design for B2B, fintech, and martech companies.">
     <meta name="twitter:image" content="/img/main-cover.jpg">
 
     <link rel="icon" href="/img/favicon.ico" sizes="any">
@@ -47,7 +47,7 @@
         let videoViewTracked = false;
 
         window.onYouTubeIframeAPIReady = function () {
-            youtubePlayer = new YT.Player("featured-case", {
+            youtubePlayer = new YT.Player("emb-video", {
                 events: {
                     onStateChange: handleYouTubeStateChange,
                 },
@@ -71,80 +71,144 @@
 </head>
 
 <body>
-    <div class="cursor-glow"></div>
+    <header>
+        <div id="logo">
+            <a href="/">Grigorii Khralenok</a>
+        </div>
+        <div class="btn">
+            <a href="mailto:khralenok.g@gmail.com" target="_blank">Inquire</a>
+        </div>
+    </header>
+
     <main>
-        <section>
-            <h1 class="hero">Grigorii Khralenok<br /><span>Brand Designer</span></h1>
-            <p>Brand designer with six years of experience building B2B brands and supporting marketing, product, and
-                sales teams through guidelines, templates, design systems, and high-quality visual assets.</p>
-            <div class="btns">
-                <a class="btn" href="mailto:khralenok.g@gmail.com" target="_blank">Email</a>
-                <a id="linkedin-btn" class="btn secondary" href="https://www.linkedin.com/in/khralenok/"
-                    target="_blank">LinkedIn</a>
+        <section id="hero">
+            <div class="hero-text">
+                <h1>Brand & Design Systems for b2b Saas companies</h1>
+                <div>My niche: <span class="niche">FinTech</span> <span class="niche">MarTech</span> <span
+                        class="niche">Web3</span> <span class="niche">Crypto</span></div>
+            </div>
+            <div class="video-container">
+                <iframe id="emb-video" class="embedded-video"
+                    src="https://www.youtube.com/embed/vOaKJkwBweA?enablejsapi=1"
+                    title="Brand Identity for a Crypto Payment Product" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
             </div>
         </section>
-        <section>
-            <h2>Featured case</h2>
-            <iframe id="featured-case" class="embedded-video"
-                src="https://www.youtube.com/embed/vOaKJkwBweA?enablejsapi=1"
-                title="Brand Identity for a Crypto Payment Product" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <h3>Brand Identity for a Crypto Payment Product</h3>
-            <p>Cryptonix is a crypto payment processor that needed to stand out in a market dominated by similar visual
-                conventions. As the brand designer, I developed the color strategy, logo direction, typography, and
-                applications across digital and physical touchpoints.</p>
-            <div class="btns"><a class="btn" href="/cases/cryptonix.html">View case study</a></div>
+
+        <section id="cases">
+            <div class="case-thumbnail" onclick="window.location.href='/cryptonix.html';" style="cursor: pointer;">
+                <div class="case-cover">
+                    <img src="/img/cryptonix.jpg" />
+                </div>
+                <div class="case-details">
+                    <div>
+                        <div class="case-title">Cryptonix</div>
+                        <div class="case-niche">fintech, crypto, b2b</div>
+                    </div>
+                    <div>
+                        <div class="case-scope">branding, digital, physical</div>
+                        <div>
+                            <a href="/cryptonix.html">[view]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-thumbnail" onclick="window.location.href='/apple.html';" style="cursor: pointer;">
+                <div class="case-cover">
+                    <img src="/img/apple.jpg" />
+                </div>
+                <div class="case-details">
+                    <div>
+                        <div class="case-title">Authorized Reseller</div>
+                        <div class="case-niche">electronics, apple, b2c</div>
+                    </div>
+                    <div>
+                        <div class="case-scope">campaign, system, motion</div>
+                        <div>
+                            <a href="/apple.html">[view]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-thumbnail" onclick="window.location.href='/zvuk.html';" style="cursor: pointer;">
+                <div class="case-cover">
+                    <img src="/img/zvuk.jpg" />
+                </div>
+                <div class="case-details">
+                    <div>
+                        <div class="case-title">Zvuk</div>
+                        <div class="case-niche">media,music,b2b</div>
+                    </div>
+                    <div>
+                        <div class="case-scope">branding, illustration, digital</div>
+                        <div>
+                            <a href="/zvuk.html">[view]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Selected work</h2>
-            <div class="cards">
-                <a href="/cases/apple.html" class="card">
-                    <img src="/img/apple-card-cover.webp">
-                    <div class="card-info">
-                        <p class="card-title">PPC Creatives Under Strict Brand Guidelines</p>
-                        <p class="card-description">A design system and production workflow for creating performance
-                            marketing assets within partner brand guidelines.</p>
+        <section id="faq">
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary class="faq-question">Who is Grigorii?</summary>
+                    <div class="faq-answer">
+                        <p>Grigorii is a brand designer with six years of experience creating visual identities, design
+                            systems, and marketing materials for B2B companies. His work covers websites, presentations,
+                            newsletters, campaigns, social media, events, and other key brand touchpoints.</p>
                     </div>
-                </a>
-                <a href="/cases/zvuk.html" class="card">
-                    <img src="/img/zvuk-card-cover.webp">
-                    <div class="card-info">
-                        <p class="card-title">Visual Narrative for a B2B Music Service</p>
-                        <p class="card-description">Visual storytelling tools for a B2B music service, designed to
-                            communicate product value clearly to enterprise clients.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Why hire Grigorii?</summary>
+                    <div class="faq-answer">
+                        <p>He combines strong hands-on design skills with system thinking. Beyond creating polished
+                            visual work, he builds templates, guidelines, and reusable components that help teams
+                            maintain quality and consistency as the volume of work grows.</p>
                     </div>
-                </a>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">What is Grigorii’s strongest quality?</summary>
+                    <div class="faq-answer">
+                        <p>His strongest quality is the ability to turn complex ideas into clear visual systems. He
+                            looks beyond individual assets and considers how typography, layout, hierarchy, motion, and
+                            reusable design principles work together across the entire brand.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">What time zone does Grigorii work in?</summary>
+                    <div class="faq-answer">
+                        <p>Grigorii is based in Vietnam and works in the UTC+7 time zone. He can maintain regular
+                            overlap with teams in the UK and Europe and is comfortable adapting his schedule when
+                            projects require closer collaboration.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">What remote-work experience does Grigorii have?</summary>
+                    <div class="faq-answer">
+                        <p>Grigorii has several years of experience working independently with distributed teams,
+                            stakeholders, contractors, and clients across multiple countries. He is comfortable with
+                            asynchronous communication, documented workflows, structured handoffs, task tracking, and
+                            taking ownership of projects without constant supervision.</p>
+                    </div>
+                </details>
             </div>
         </section>
     </main>
+
     <footer>
-        <a>© 2026 Grigorii Khralenok, All rights reserved.</a>
+        <div>
+            <a href="mailto:khralenok.g@gmail.com" target="_blank">khralenok.g@gmail.com</a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/khralenok/" target="_blank">LinkedIn</a>
+        </div>
     </footer>
-    <script>
-        const glow = document.querySelector('.cursor-glow');
-        window.addEventListener('mousemove', (e) => {
-            // Reveal the glow on first move
-            if (glow.style.opacity === '0' || !glow.style.opacity) {
-                glow.style.opacity = '1';
-            }
-
-            // Update the position variables dynamically
-            glow.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
-        });
-
-        // Optional: Hide it when the mouse leaves the window
-        document.addEventListener('mouseleave', () => {
-            glow.style.opacity = '0';
-        });
-
-        document.querySelector("#linkedin-btn").addEventListener("click", function () {
-            gtag("event", "linkedin_clicked", {
-                link_url: this.href,
-                link_location: this.dataset.location || "unknown",
-            });
-        });
-    </script>
 </body>
 
 </html>

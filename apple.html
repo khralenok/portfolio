@@ -11,13 +11,13 @@
     <meta property="og:title" content="PPC Creatives Under Strict Brand Guidelines">
     <meta property="og:description" content="A design system and production workflow for creating performance
                             marketing assets within partner brand guidelines.">
-    <meta property="og:image" content="/img/apple-cover.webp">
-    <meta property="og:url" content="https://khralenok/cases/apple.html">
+    <meta property="og:image" content="/img/apple.jpg">
+    <meta property="og:url" content="https://khralenok/apple.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PPC Creatives Under Strict Brand Guidelines">
     <meta name="twitter:description" content="A design system and production workflow for creating performance
                             marketing assets within partner brand guidelines.">
-    <meta name="twitter:image" content="/img/apple-cover.webp">
+    <meta name="twitter:image" content="/img/apple.jpg">
 
     <link rel="icon" href="/img/favicon.ico" sizes="any">
     <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
@@ -29,6 +29,12 @@
         rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X94L96QLE"></script>
+    <style>
+        :root {
+            --color-accent-100: var(--color-neutral-100);
+            --color-accent-80: var(--color-neutral-40);
+        }
+    </style>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -39,9 +45,17 @@
 </head>
 
 <body>
+    <header>
+        <div id="logo">
+            <a href="/">Grigorii Khralenok</a>
+        </div>
+        <div class="btn">
+            <a href="mailto:khralenok.g@gmail.com" target="_blank">Inquire</a>
+        </div>
+    </header>
+
     <main>
-        <nav><a href="/">Main</a><a> > <strong>Apple Reseller</strong></a></nav>
-        <section>
+        <article>
             <h1>PPC Creatives Under Strict Brand Guidelines</h1>
             <figure>
                 <img src="/img/apple-cover.webp">
@@ -110,37 +124,52 @@
                 for 10 markets in the timeframe previously needed for three markets.</p>
             <p>This case demonstrates production design under real constraints: strict guidelines, multiple languages,
                 short timelines, and high-volume marketing output.</p>
-        </section>
-        <section>
-            <h2>Get in touch</h2>
-            <div class="btns"><a class="btn" href="mailto:khralenok.g@gmail.com" target="_blank">Email</a><a
-                    class="btn secondary" href="https://www.linkedin.com/in/khralenok/" target="_blank">LinkedIn</a>
+        </article>
+        <section id="cases">
+            <div class="case-thumbnail" onclick="window.location.href='/cryptonix.html';" style="cursor: pointer;">
+                <div class="case-cover">
+                    <img src="/img/cryptonix.jpg" />
+                </div>
+                <div class="case-details">
+                    <div>
+                        <div class="case-title">Cryptonix</div>
+                        <div class="case-niche">fintech, crypto, b2b</div>
+                    </div>
+                    <div>
+                        <div class="case-scope">branding, digital, physical</div>
+                        <div>
+                            <a href="/cryptonix.html">[view]</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section>
-            <h2>More of my case studies</h2>
-            <div class="cards">
-                <a href="/cases/cryptonix.html" class="card">
-                    <img src="/img/cryptonix-card-cover.webp">
-                    <div class="card-info">
-                        <p class="card-title">Brand Identity for Crypto Payment Product</p>
-                        <p class="card-description">Color strategy, logo direction, typography, and
-                            applications across digital and physical touchpoints for crypto payments processor.</p>
+            <div class="case-thumbnail" onclick="window.location.href='/zvuk.html';" style="cursor: pointer;">
+                <div class="case-cover">
+                    <img src="/img/zvuk.jpg" />
+                </div>
+                <div class="case-details">
+                    <div>
+                        <div class="case-title">Zvuk</div>
+                        <div class="case-niche">media,music,b2b</div>
                     </div>
-                </a>
-                <a href="/cases/zvuk.html" class="card">
-                    <img src="/img/zvuk-card-cover.webp">
-                    <div class="card-info">
-                        <p class="card-title">Visual Narrative for a B2B Music Service</p>
-                        <p class="card-description">Visual storytelling, website materials, and sales presentations
-                            that helped explain an invisible B2B music service to enterprise clients.</p>
+                    <div>
+                        <div class="case-scope">branding, illustration, digital</div>
+                        <div>
+                            <a href="/zvuk.html">[view]</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </section>
     </main>
+
     <footer>
-        <a>© 2026 Grigorii Khralenok, All rights reserved.</a>
+        <div>
+            <a href="mailto:khralenok.g@gmail.com" target="_blank">khralenok.g@gmail.com</a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/khralenok/" target="_blank">LinkedIn</a>
+        </div>
     </footer>
 </body>
 
