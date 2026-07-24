@@ -36,38 +36,6 @@
 
         gtag('config', 'G-4X94L96QLE');
     </script>
-    <script>
-        const youtubeApiScript = document.createElement("script");
-        youtubeApiScript.src = "https://www.youtube.com/iframe_api";
-
-        const firstScript = document.getElementsByTagName("script")[0];
-        firstScript.parentNode.insertBefore(youtubeApiScript, firstScript);
-
-        let youtubePlayer;
-        let videoViewTracked = false;
-
-        window.onYouTubeIframeAPIReady = function () {
-            youtubePlayer = new YT.Player("emb-video", {
-                events: {
-                    onStateChange: handleYouTubeStateChange,
-                },
-            });
-        };
-
-        function handleYouTubeStateChange(event) {
-            const startedPlaying = event.data === YT.PlayerState.PLAYING;
-
-            // Send only once per page load.
-            if (startedPlaying && !videoViewTracked) {
-                videoViewTracked = true;
-
-                gtag("event", "video_viewed", {
-                    video_platform: "youtube",
-                    video_title: "Cryptonix portfolio showreel",
-                });
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -89,9 +57,9 @@
             </div>
             <div class="video-container">
                 <iframe id="emb-video" class="embedded-video"
-                    src="https://www.youtube.com/embed/vOaKJkwBweA?enablejsapi=1"
+                    src="https://www.youtube.com/embed/vOaKJkwBweA?autoplay=1&mute=1&controls=0&rel=0&loop=1"
                     title="Brand Identity for a Crypto Payment Product" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="autoplay; encrypted-media"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
