@@ -175,6 +175,18 @@ article iframe {
     aspect-ratio: 16/9;
 }
 
+.highlight-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--base-size)/2) 0;
+    line-height: 1.6;
+}
+
+.highlight-item>div:first-child{
+    font-weight: 900;
+}
+
 .case-details {
     display: flex;
     flex-direction: column;
@@ -196,7 +208,7 @@ article iframe {
     color: var(--color-accent-80);
 }
 
-#cases>div:nth-child(2) {
+#cases>div:nth-child(2), .highlight-item:nth-child(2) {
     border-left: calc(var(--base-size)/19.2) solid var(--color-neutral-100);
     border-right: calc(var(--base-size)/19.2) solid var(--color-neutral-100);
 }
@@ -293,6 +305,10 @@ article iframe {
 
     section {
         flex-direction: column;
+    }
+
+    #highlights{
+        flex-direction: row;
     }
 
     #hero>div {
