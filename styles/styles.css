@@ -156,6 +156,10 @@ h1 {
     font-size: calc(var(--base-size)*3.2);
 }
 
+h1 span{
+    color: var(--color-accent-100);
+}
+
 .hero-text .niche {
     border: calc(var(--base-size)/19.2) solid var(--color-neutral-40);
     padding: calc(var(--base-size)/4) calc(var(--base-size)/2);
