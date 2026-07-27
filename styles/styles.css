@@ -162,13 +162,14 @@ h1 {
     border-radius: calc(var(--base-size)/2);
 }
 
-.video-container {
+.hero-cover {
     display: flex;
     background-color: var(--color-neutral-60);
     border-left: calc(var(--base-size)/19.2) solid var(--color-neutral-100);
 }
 
-.video-container iframe,
+.hero-cover iframe,
+.hero-cover figure,
 article iframe {
     width: 100%;
     aspect-ratio: 16/9;
@@ -306,7 +307,7 @@ article iframe {
         font-size: calc(var(--base-size)*2.65);
     }
 
-    .video-container {
+    .hero-cover {
         margin-bottom: calc(var(--base-size)*2);
         border: unset;
     }
