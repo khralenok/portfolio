@@ -1,181 +1,54 @@
-<!DOCTYPE html>
+---
+import GlobalStyles from "../components/GlobalStyles.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Cases from "../components/Cases.astro";
+import Hero from "../components/Hero.astro";
+import Faq from "../components/Faq.astro";
+import { Font } from "astro:assets";
+---
+
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Grigorii Khralenok – Brand Designer" />
+    <meta
+      property="og:description"
+      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
+    />
+    <meta property="og:image" content="src/images/main-cover.jpg" />
+    <meta property="og:url" content="https://khralenok.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grigorii Khralenok – Brand Designer" />
+    <meta
+      name="twitter:description"
+      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
+    />
+    <meta name="twitter:image" content="src/images/main-cover.jpg" />
     <title>Grigorii Khralenok – Brand Designer</title>
-    <meta name="description"
-        content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs.">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Grigorii Khralenok – Brand Designer">
-    <meta property="og:description"
-        content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs.">
-    <meta property="og:image" content="/img/main-cover.jpg">
-    <meta property="og:url" content="https://khralenok.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Grigorii Khralenok – Brand Designer">
-    <meta name="twitter:description"
-        content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs.">
-    <meta name="twitter:image" content="/img/main-cover.jpg">
-
-    <link rel="icon" href="/img/favicon.ico" sizes="any">
-    <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X94L96QLE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-4X94L96QLE');
-    </script>
-</head>
-
-<body>
-    <header>
-        <div id="logo">
-            <a href="/">Grigorii Khralenok</a>
-        </div>
-        <div class="btn">
-            <a href="mailto:khralenok.g@gmail.com" target="_blank">Inquire</a>
-        </div>
-    </header>
+    <Font cssVariable="--font-inter" />
+    <GlobalStyles />
+  </head>
+  <body>
+    <Header />
 
     <main>
-        <section id="hero">
-            <div class="hero-text">
-                <h1>Brand Designer</h1>
-                <p>Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs.</p>
-            </div>
-            <div class="hero-cover">
-                <iframe id="emb-video" class="embedded-video"
-                    src="https://www.youtube.com/embed/vOaKJkwBweA?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=vOaKJkwBweA"      
-                    frameborder="0"
-                    allow="autoplay; encrypted-media"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+      <Hero />
 
-        <section id="cases">
-            <div class="case-thumbnail" onclick="window.location.href='/cryptonix.html';" style="cursor: pointer;">
-                <div class="case-cover">
-                    <img src="/img/cryptonix.jpg" />
-                </div>
-                <div class="case-details">
-                    <div>
-                        <div class="case-title">Cryptonix</div>
-                        <div class="case-niche">FinTech, B2B</div>
-                    </div>
-                    <div>
-                        <div class="case-scope">Branding, Design System, Visuals</div>
-                        <div>
-                            <a href="/cryptonix.html">[view]</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-thumbnail" onclick="window.location.href='/crowd-control.html';" style="cursor: pointer;">
-                <div class="case-cover">
-                    <img src="/img/cc.jpg" />
-                </div>
-                <div class="case-details">
-                    <div>
-                        <div class="case-title">Crowd Control</div>
-                        <div class="case-niche">MarTech, B2B</div>
-                    </div>
-                    <div>
-                        <div class="case-scope">Branding, Design System, Mascot</div>
-                        <div>
-                            <a href="/crowd-control.html">[view]</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-thumbnail" onclick="window.location.href='/zvuk.html';" style="cursor: pointer;">
-                <div class="case-cover">
-                    <img src="/img/zvuk.jpg" />
-                </div>
-                <div class="case-details">
-                    <div>
-                        <div class="case-title">Zvuk Business</div>
-                        <div class="case-niche">MarTech, B2B</div>
-                    </div>
-                    <div>
-                        <div class="case-scope">Branding, Design System, Illustrations</div>
-                        <div>
-                            <a href="/zvuk.html">[view]</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="faq">
-            <div class="faq-container">
-                <details class="faq-item">
-                    <summary class="faq-question">Who is Grigorii?</summary>
-                    <div class="faq-answer">
-                        <p>Grigorii is a brand designer with 10 years of experience creating visual identities, design
-                            systems, and marketing materials for B2B companies. His work covers websites, presentations,
-                            newsletters, campaigns, social media, events, and other key brand touchpoints.</p>
-                    </div>
-                </details>
+      <Cases />
 
-                <details class="faq-item">
-                    <summary class="faq-question">Why hire Grigorii?</summary>
-                    <div class="faq-answer">
-                        <p>He combines strong hands-on design skills with system thinking. Beyond creating polished
-                            visual work, he builds templates, guidelines, and reusable components that help teams
-                            maintain quality and consistency as the volume of work grows.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">What is Grigorii’s strongest quality?</summary>
-                    <div class="faq-answer">
-                        <p>His strongest quality is the ability to turn complex ideas into clear visual systems. He
-                            looks beyond individual assets and considers how typography, layout, hierarchy, motion, and
-                            reusable design principles work together across the entire brand.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">What time zone does Grigorii work in?</summary>
-                    <div class="faq-answer">
-                        <p>Grigorii is based in Vietnam and works in the UTC+7 time zone. He can maintain regular
-                            overlap with teams in the UK and Europe and is comfortable adapting his schedule when
-                            projects require closer collaboration.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">What remote-work experience does Grigorii have?</summary>
-                    <div class="faq-answer">
-                        <p>Grigorii has several years of experience working independently with distributed teams,
-                            stakeholders, contractors, and clients across multiple countries. He is comfortable with
-                            asynchronous communication, documented workflows, structured handoffs, task tracking, and
-                            taking ownership of projects without constant supervision.</p>
-                    </div>
-                </details>
-            </div>
-        </section>
+      <Faq />
     </main>
 
-    <footer>
-        <div>
-            <a href="mailto:khralenok.g@gmail.com" target="_blank">khralenok.g@gmail.com</a>
-        </div>
-        <div>
-            <a href="https://www.linkedin.com/in/khralenok/" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-</body>
-
+    <Footer />
+  </body>
 </html>

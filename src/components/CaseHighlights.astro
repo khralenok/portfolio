@@ -1,0 +1,65 @@
+---
+const { service, role, deliverables } = Astro.props;
+---
+
+<section id="highlights">
+  <div class="highlight-item">
+    <div>Service</div>
+    <div>{service}</div>
+  </div>
+  <div class="highlight-item">
+    <div>Role</div>
+    <div>{role}</div>
+  </div>
+  <div class="highlight-item">
+    <div>Deliverables</div>
+    <div>{deliverables}</div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    border-top: var(--standard-border);
+    border-bottom: var(--standard-border);
+  }
+
+  section > div {
+    flex: 1 1 0%;
+  }
+
+  section > div:nth-child(2){
+    border-left: var(--standard-border);
+    border-right: var(--standard-border);
+  }
+
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: calc(var(--base-size) / 2) 0;
+    line-height: 1.6;
+  }
+
+  .highlight-item > div:first-child {
+    font-weight: 900;
+  }
+
+    @media (max-width: 1024px) {
+
+    section {
+      flex-direction: column;
+    }
+
+
+    .highlight-item:nth-child(2) {
+      border-left: unset;
+      border-right: unset;
+      border-top: var(--standard-border);
+      border-bottom: var(--standard-border);
+    }
+
+
+  }
+</style>

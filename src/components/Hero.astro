@@ -1,0 +1,74 @@
+<section id="hero">
+  <div class="hero-text">
+    <h1>Brand Designer</h1>
+    <p>
+      Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual
+      systems that scale with business needs.
+    </p>
+  </div>
+  <div class="hero-cover">
+    <iframe
+      id="emb-video"
+      class="embedded-video"
+      src="https://www.youtube.com/embed/vOaKJkwBweA?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=vOaKJkwBweA"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+</section>
+<style>
+  section {
+    display: flex;
+    border-top: var(--standard-border);
+  }
+
+  section > div {
+    flex: 1 1 0%;
+    max-width: 50vw;
+    min-width: 0;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--base-size)*1.5);
+    padding: 0 calc(var(--base-size)*3) 0 calc(var(--base-size)*2);
+  }
+
+  .hero-text h1,
+  .hero-text p {
+    margin: 0;
+  }
+
+  .hero-cover {
+    display: flex;
+    background-color: var(--color-neutral-60);
+    border-left: var(--standard-border);
+  }
+
+  iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  @media (max-width: 1024px) {
+    section {
+      flex-direction: column;
+    }
+
+    #hero > div {
+      max-width: unset;
+    }
+
+    .hero-text {
+      padding: calc(var(--base-size) * 1.5);
+    }
+    .hero-cover {
+      margin-bottom: calc(var(--base-size) * 2);
+      border: unset;
+    }
+  }
+</style>

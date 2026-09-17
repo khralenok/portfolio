@@ -1,0 +1,42 @@
+<header>
+  <div id="logo">
+    <a href="/">Grigorii Khralenok</a>
+  </div>
+  <div class="btn">
+    <a href="mailto:khralenok.g@gmail.com" target="_blank">Inquire</a>
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(var(--base-size)*0.75) var(--base-size);
+  }
+  #logo {
+    --logo-size: var(--base-size * 1.25);
+    font-size: var(--logo-size);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: calc(var(--logo-size) * 0.01);
+    color: var(--color-neutral-80);
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a:link,
+  a:visited {
+    color: inherit;
+  }
+
+  .btn a {
+    text-decoration: none;
+    color: var(--color-neutral-0);
+    padding: calc(var(--base-size)*0.5) var(--base-size);
+    background-color: var(--color-accent-100);
+    border-radius: calc(var(--base-size)*0.5);
+  }
+</style>

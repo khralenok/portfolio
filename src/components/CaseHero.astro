@@ -1,0 +1,74 @@
+---
+const { title, description, cover } = Astro.props;
+---
+
+<section id="hero">
+  <div class="hero-text">
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </div>
+  <div class="hero-cover">
+    <img src={cover.src} />
+  </div>
+</section>
+<style>
+  section {
+    display: flex;
+    border-top: var(--standard-border);
+  }
+
+  section > div {
+    flex: 1 1 0%;
+    max-width: 50vw;
+    min-width: 0;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--base-size)*1.5);
+    padding: 0 calc(var(--base-size)*3) 0 calc(var(--base-size)*2);
+  }
+
+  .hero-text h1,
+  .hero-text p {
+    margin: 0;
+  }
+
+
+  .hero-cover {
+    display: flex;
+    background-color: var(--color-neutral-60);
+    border-left: var(--standard-border);
+  }
+
+  figure {
+    margin: 0;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: unset;
+    aspect-ratio: 16/9;
+  }
+
+  @media (max-width: 1024px) {
+    section {
+      flex-direction: column;
+    }
+
+    #hero > div {
+      max-width: unset;
+    }
+
+    .hero-text {
+      padding: calc(var(--base-size) * 1.5);
+    }
+    .hero-cover {
+      margin-bottom: calc(var(--base-size) * 2);
+      border: unset;
+    }
+  }
+</style>

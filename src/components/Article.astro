@@ -1,0 +1,64 @@
+---
+const { Content } = Astro.props;
+---
+
+<article>
+  <Content />
+</article>
+
+<style is:global>
+  article {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2vw 5vw;
+    margin: 0 23vw;
+    border-left: var(--standard-border);
+    border-right: var(--standard-border);
+  }
+  h1 {
+    --heading-size: calc(var(--base-size)/3 * 7);
+  }
+
+  h2 {
+    --heading-size: calc(var(--base-size)/3 * 6);
+  }
+
+  h3 {
+    --heading-size: calc(var(--base-size)/3 * 4);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: var(--heading-size);
+    margin: calc(var(--heading-size) * 1.5) 0 calc(var(--heading-size) * 0.5);
+    line-height: calc(var(--heading-size) * 1.2);
+    letter-spacing: calc(var(--heading-size) * 0.05);
+    color: var(--color-neutral-80);
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  p,
+  li {
+    line-height: calc(var(--base-size) * 1.6);
+  }
+
+  p {
+    margin-bottom: var(--base-size);
+  }
+
+  article img {
+    max-width: 100%;
+    height: unset;
+    aspect-ratio: 16/9;
+    border-radius: calc(var(--base-size) / 4);
+  }
+  @media (max-width: 1024px) {
+    article {
+      padding: 0 var(--base-size) var(--base-size);
+      margin: unset;
+      border: unset;
+    }
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import GlobalStyles from "../components/GlobalStyles.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CaseHighlights from "../components/CaseHighlights.astro";
+import Article from "../components/Article.astro";
+import CaseHero from "../components/CaseHero.astro";
+import Cases from "../components/Cases.astro";
+import { Font } from "astro:assets";
+
+export async function getStaticPaths() {
+  const cases = await getCollection("cases");
+
+  return cases.map((caseStudy: CollectionEntry<"cases">) => ({
+    params: {
+      id: caseStudy.id,
+    },
+    props: {
+      caseStudy,
+    },
+  }));
+}
+
+const { caseStudy } = Astro.props;
+
+const { Content } = await render(caseStudy);
+
+const currentUrl = "https://khralenok.com/" + Astro.url.pathname;
+const caseTitle = "Grigorii Khralenok - " + caseStudy.data.title + " Case Study"
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={caseStudy.data.description}>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={caseTitle}>
+    <meta property="og:description" content={caseStudy.data.description}>
+    <meta property="og:image" content={caseStudy.data.cover.src}>
+    <meta property="og:url" content={currentUrl}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={caseTitle}>
+    <meta name="twitter:description" content={caseStudy.data.description}>
+    <meta name="twitter:image" content={caseStudy.data.cover.src}>
+    <title>{caseTitle}</title>
+    <Font cssVariable="--font-inter" />
+    <GlobalStyles />
+  </head>
+  <body>
+    <Header />
+    <CaseHero {...caseStudy.data} />
+    <CaseHighlights {...caseStudy.data} />
+    <Article {Content} />
+    <Cases />
+    <Footer />
+  </body>
+</html>
