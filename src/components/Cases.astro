@@ -1,29 +1,26 @@
 ---
 import CaseCard from "../components/CaseCard.astro";
-import cryptonixCover from "../images/cryptonix.jpg"
-import ccCover from "../images/cc.jpg"
-import zvukCover from "../images/zvuk.jpg"
 
 const cases = [
   {
     title: "Cryptonix",
     niche: "FinTech, B2B",
     scope: "Branding, Design System, Visuals",
-    image: cryptonixCover.src,
+    image: "/img/cryptonix.jpg",
     href: "/cryptonix",
   },
   {
     title: "Crowd Control",
     niche: "MarTech, B2B",
     scope: "Branding, Design System, Mascot",
-    image: ccCover.src,
+    image: "/img/cc.jpg",
     href: "/crowd-control",
   },
   {
     title: "Zvuk Business",
     niche: "MarTech, B2B",
     scope: "Branding, Design System, Illustrations",
-    image: zvukCover.src,
+    image: "/img/zvuk.jpg",
     href: "/zvuk",
   },
 ];
@@ -38,6 +35,8 @@ for (const item of cases) {
 ---
 
 <section id="cases">
+<h2>My cases</h2>
+
   {
     actualCases.map((item) => (
       <CaseCard
@@ -53,7 +52,13 @@ for (const item of cases) {
 
 <style>
   section {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h2{
+    grid-column: span 3;
+    text-align: center;
   }
 
   @media (max-width: 1024px) {

@@ -1,54 +1,21 @@
 ---
-import GlobalStyles from "../components/GlobalStyles.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Cases from "../components/Cases.astro";
 import Hero from "../components/Hero.astro";
 import Faq from "../components/Faq.astro";
-import { Font } from "astro:assets";
+import Skills from "../components/Skills.astro";
+import Featured from "../components/Featured.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Grigorii Khralenok – Brand Designer" />
-    <meta
-      property="og:description"
-      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
-    />
-    <meta property="og:image" content="src/images/main-cover.jpg" />
-    <meta property="og:url" content="https://khralenok.com" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Grigorii Khralenok – Brand Designer" />
-    <meta
-      name="twitter:description"
-      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
-    />
-    <meta name="twitter:image" content="src/images/main-cover.jpg" />
-    <title>Grigorii Khralenok – Brand Designer</title>
-    <Font cssVariable="--font-inter" />
-    <GlobalStyles />
-  </head>
-  <body>
-    <Header />
-
-    <main>
-      <Hero />
-
-      <Cases />
-
-      <Faq />
-    </main>
-
-    <Footer />
-  </body>
-</html>
+<BaseLayout
+  title="Brand Designer"
+  description="Portfolio of Grigorii Khralenok, brand and creative designer."
+>
+  <main>
+    <Hero />
+    <Skills />
+    <Cases />
+    <Featured />
+    <Faq />
+  </main>
+</BaseLayout>

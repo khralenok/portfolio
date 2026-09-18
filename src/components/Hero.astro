@@ -1,74 +1,80 @@
 <section id="hero">
+  <img src="img/hero-illustration.png" />
   <div class="hero-text">
-    <h1>Brand Designer</h1>
+    <h1>
+      <span id="h1-1">Looking for </span>
+      <span id="h1-2">a graphic designer?</span>
+    </h1>
     <p>
       Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual
       systems that scale with business needs.
     </p>
-  </div>
-  <div class="hero-cover">
-    <iframe
-      id="emb-video"
-      class="embedded-video"
-      src="https://www.youtube.com/embed/vOaKJkwBweA?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=vOaKJkwBweA"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    >
-    </iframe>
+    <div class="btn-wrapper">
+      <a class="btn">Watch showreel</a><a class="btn" href="#cases"
+        >Explore cases</a
+      >
+    </div>
   </div>
 </section>
+
 <style>
-  section {
-    display: flex;
-    border-top: var(--standard-border);
+  #hero {
+    width: 100%;
+    color: white;
   }
 
-  section > div {
-    flex: 1 1 0%;
-    max-width: 50vw;
-    min-width: 0;
+  img{
+    position: absolute;
+    top: -4.5rem;
+    z-index: 10;
   }
 
   .hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: calc(var(--base-size)*1.5);
-    padding: 0 calc(var(--base-size)*3) 0 calc(var(--base-size)*2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    margin-top: 17rem;
+    padding: 4rem 2rem;
+    background-color: brown;
   }
 
-  .hero-text h1,
-  .hero-text p {
-    margin: 0;
-  }
-
-  .hero-cover {
-    display: flex;
-    background-color: var(--color-neutral-60);
-    border-left: var(--standard-border);
-  }
-
-  iframe {
+  img {
     width: 100%;
-    aspect-ratio: 16/9;
+    grid-column: span 2;
   }
-  @media (max-width: 1024px) {
-    section {
-      flex-direction: column;
-    }
 
-    #hero > div {
-      max-width: unset;
-    }
+  h1 {
+    margin: 0;
+    width: 100%;
+    grid-column: span 2;
+    color: inherit;
+    font-size: 8rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+  #h1-1 {
+    font-size: 13.5vw;
+  }
 
-    .hero-text {
-      padding: calc(var(--base-size) * 1.5);
-    }
-    .hero-cover {
-      margin-bottom: calc(var(--base-size) * 2);
-      border: unset;
-    }
+  #h1-2 {
+    font-size: 8vw;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .btn {
+    display: flex;
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    background: white;
+    color: brown;
+  }
+  p {
+    font-size: 1.8rem;
+    line-height: 1.5;
   }
 </style>

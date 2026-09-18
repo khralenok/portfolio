@@ -17,11 +17,6 @@
     letter-spacing: calc(var(--base-size) * 0.02);
   }
 
-  html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-  }
-
   *,
   *::before,
   *::after {
@@ -31,7 +26,15 @@
   }
 
   body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
     margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
   }
 
   h1 {
