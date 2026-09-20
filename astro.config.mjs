@@ -9,5 +9,19 @@ export default defineConfig({
         cssVariable: "--font-inter",
         styles: ["normal"],
         weights: [400, 600, 900]
+    },
+    {
+        provider: fontProviders.google(),
+        name: "Fredoka",
+        cssVariable: "--font-fredoka",
+        styles: ["normal"],
+        weights: ["300 700"],
+        options: {
+            experimental: {
+                variableAxis: {
+                    wdth: [["75", "125"]],
+                },
+            },
+        },
     }]
 });

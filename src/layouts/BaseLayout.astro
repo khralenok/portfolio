@@ -1,7 +1,7 @@
 ---
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -15,11 +15,7 @@ const { title, description, image } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <Head
-      title={title}
-      description={description}
-      image={image}
-    />
+    <Head title={title} description={description} image={image} />
     <slot name="head" />
   </head>
 
@@ -29,3 +25,19 @@ const { title, description, image } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<style>
+  :root {
+    --color-accent: rgb(202, 42, 54);
+    --color-neutral-100: #0B111F;
+    --color-neutral-0: rgb(255,255,255);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+</style>
