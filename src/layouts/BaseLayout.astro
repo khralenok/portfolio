@@ -30,9 +30,33 @@ const { title, description, image } = Astro.props;
 
 <style>
   :root {
-    --color-accent: rgb(202, 42, 54);
-    --color-neutral-100: #0b111f;
-    --color-neutral-0: rgb(255, 255, 255);
+    --color-1: #ca2938;
+    --color-2: #fff;
+    --color-3: #8cd0d1;
+    --color-4: #5c1a26;
+    --color-5: #0c1421;
+    --color-6: #ff5a6e;
+    --color-7: #004c4c;
+    --color-8: #6cb2b2;
+
+    --color-accent: var(--color-1);
+    --color-accent-hover: var(--color-4);
+    --color-highlight: var(--color-3);
+    --color-highlight-strong: var(--color-7);
+    --color-text: var(--color-5);
+    --color-muted: #53606f;
+    --color-surface: var(--color-2);
+    --color-surface-tint: #f5f9f8;
+    --color-border: color-mix(in srgb, var(--color-5) 24%, transparent);
+    --color-neutral-100: var(--color-5);
+    --color-neutral-0: var(--color-2);
+
+    --page-gutter: clamp(1rem, 4vw, 3rem);
+    --content-width: min(100vw,80ch);
+    --text-width: 42rem;
+    --section-space: clamp(4.5rem, 9vw, 8rem);
+    --radius-sm: 4px;
+    --radius-md: 8px;
   }
 
   *,
@@ -41,6 +65,28 @@ const { title, description, image } = Astro.props;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    interpolate-size: allow-keywords;
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-text);
+    min-width: 20rem;
+  }
+
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-3);
+    outline-offset: 3px;
   }
 
   main {

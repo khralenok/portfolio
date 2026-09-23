@@ -56,18 +56,22 @@ for (const item of cases) {
 <style>
   .container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .case-thumbnail {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     overflow: hidden;
     font-family: var(--font-inter);
     text-decoration: none;
     color: inherit;
+    background: var(--color-surface);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
   }
 
   .case-details {
@@ -86,6 +90,7 @@ for (const item of cases) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 300ms ease;
   }
 
   .case-title {
@@ -93,5 +98,32 @@ for (const item of cases) {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.5rem;
+  }
+
+  .case-niche,
+  .case-scope {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .case-scope {
+    margin-top: 0.75rem;
+  }
+
+  .case-thumbnail:hover {
+    border-color: var(--color-8);
+    box-shadow: 0 0.5rem 0 var(--color-3);
+    transform: translateY(-0.25rem);
+  }
+
+  .case-thumbnail:hover .case-cover img {
+    transform: scale(1.025);
+  }
+
+  @media (max-width: 52rem) {
+    .container {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

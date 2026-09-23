@@ -10,7 +10,7 @@ import { NotepadText } from "@lucide/astro";
 >
   <section id="hero" class="large">
     <div id="illustration">
-      <img src="img/hero-illustration.svg" />
+      <img src="/img/hero-illustration.svg" alt="A character peeking over the hero panel" />
     </div>
     <div class="hero-text">
       <div id="title">
@@ -20,7 +20,7 @@ import { NotepadText } from "@lucide/astro";
         </h1>
       </div>
       <div id="subtitle">
-        You found one. Hi, I’m Grigorii Khralenok. I design brand comunications
+        You found one. Hi, I’m Grigorii Khralenok. I design brand communications
         and build systems and automations that make the work behind it run
         smoothly.
       </div>
@@ -30,7 +30,7 @@ import { NotepadText } from "@lucide/astro";
     </div>
   </section>
   <section id="workflow">
-    <div id="section-description">
+    <div class="section-description">
       <h2>How I work</h2>
       <p>
         AI makes design faster, but not automatically better. Generated visuals
@@ -39,46 +39,51 @@ import { NotepadText } from "@lucide/astro";
       </p>
     </div>
     <div id="image">
-      <img src="img/workflow-illustration.png" width="320" height="320" />
+      <img src="/img/workflow-illustration.png" width="320" height="320" alt="Design workflow illustration" />
     </div>
     <div id="cards">
       <div class="card">
         <div class="number">1</div>
-        <h3>Do the real design work</h3>
+        <h3>Design the real work</h3>
         <p>
-          Every brand has its own logic. I learn it by working on real
-          communication — audience, goals, constraints and team included.
+          I learn the brand through real communication work, balancing its
+          audience, goals, constraints and team needs before defining a direction.
         </p>
       </div>
       <div class="card">
         <div class="number">2</div>
-        <h3>Turn it into a system</h3>
+        <h3>Build the visual system</h3>
         <p>
-          Once the visual language is clear, I turn it into practical rules and
-          reusable patterns that keep everyday work fast and consistent.
+          I turn the proven visual language into practical rules and reusable
+          patterns, keeping everyday production fast, clear and consistent.
         </p>
       </div>
       <div class="card">
         <div class="number">3</div>
-        <h3>Automate the repetitive parts</h3>
+        <h3>Automate repeatable work</h3>
         <p>
-          When the system is stable, repetitive production becomes much easier
-          to automate. I use TypeScript, Figma Plugin API, Codex and AI models
-          to handle the mechanical work without giving up control.
+          I automate stable, repetitive production with TypeScript, Figma APIs
+          and AI tools, while keeping creative decisions deliberate and editable.
         </p>
       </div>
     </div>
   </section>
   <section id="cases">
-    <h2>Case studies</h2>
+    <div class="section-heading">
+      <h2>Case studies</h2>
+      <p>
+        Selected identity systems and creative work built to stay consistent
+        across real teams, channels and production demands.
+      </p>
+    </div>
     <Cases />
   </section>
   <section id="knowhow">
-    <div id="section-description">
+    <div class="section-description">
       <h2>Know-how</h2>
       <p>
-        I've constantly learn new things and collect them into notes. Here are
-        my learnings that you can find interesting.
+        I’m constantly learning new things and collecting them into notes. Here
+        are a few ideas you might find useful.
       </p>
       <div class="btns-wrapper">
         <a class="btn">Explore more</a>
@@ -112,8 +117,15 @@ import { NotepadText } from "@lucide/astro";
     </ul>
   </section>
   <section id="faq">
+    <div class="section-heading">
+      <h2>FAQ</h2>
+      <p>
+        A little more about my experience, working style and collaborating
+        across distributed teams.
+      </p>
+    </div>
     <div class="faq-container">
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary class="faq-question">Who is Grigorii?</summary>
         <div class="faq-answer">
           <p>
@@ -125,7 +137,7 @@ import { NotepadText } from "@lucide/astro";
         </div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary class="faq-question">Why hire Grigorii?</summary>
         <div class="faq-answer">
           <p>
@@ -137,7 +149,7 @@ import { NotepadText } from "@lucide/astro";
         </div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary class="faq-question"
           >What is Grigorii’s strongest quality?</summary
         >
@@ -151,7 +163,7 @@ import { NotepadText } from "@lucide/astro";
         </div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary class="faq-question"
           >What time zone does Grigorii work in?</summary
         >
@@ -165,7 +177,7 @@ import { NotepadText } from "@lucide/astro";
         </div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary class="faq-question"
           >What remote-work experience does Grigorii have?</summary
         >
@@ -187,17 +199,14 @@ import { NotepadText } from "@lucide/astro";
 <style>
   section {
     font-family: var(--font-inter);
-    font-size: 1.25rem;
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
     line-height: 1.5;
   }
 
-  section:not(.large),
-  .hero-text > * {
-    width: min(80ch, 100vw);
-  }
-
   section:not(.large) {
-    margin-block: 2rem 2rem;
+    width: min(var(--content-width), calc(100% - 2 * var(--page-gutter)));
+    margin-block: var(--section-space);
+    scroll-margin-top: 2rem;
   }
 
   h1,
@@ -209,7 +218,8 @@ import { NotepadText } from "@lucide/astro";
   }
 
   h1 {
-    --block-width: min(80ch, 100vw);
+    --block-width: min(76rem, calc(100vw - 2 * var(--page-gutter)));
+    width: var(--block-width);
     color: inherit;
     line-height: 1;
     text-transform: uppercase;
@@ -217,32 +227,38 @@ import { NotepadText } from "@lucide/astro";
 
   h1 span:nth-child(1) {
     display: block;
-    font-size: calc(var(--block-width) * 0.083);
+    font-size: calc(var(--block-width) * 0.125);
     font-stretch: 103%;
     white-space: nowrap;
   }
 
   h1 span:nth-child(2) {
     display: block;
-    font-size: calc(var(--block-width) * 0.0495);
+    font-size: calc(var(--block-width) * 0.073);
     font-stretch: 105%;
     white-space: nowrap;
   }
 
   h2,
   h3 {
-    line-height: 1.25;
+    line-height: 1.12;
     color: var(--color-accent);
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2.25rem, 5vw, 4.2rem);
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
   }
 
   #hero {
     width: 100%;
-    color: white;
+    color: var(--color-neutral-0);
     z-index: 1;
+    scroll-margin-top: 2rem;
   }
 
   .hero-text {
@@ -250,7 +266,7 @@ import { NotepadText } from "@lucide/astro";
     flex-direction: column;
     align-items: center;
     background-color: var(--color-accent);
-    padding-block: 2rem 2rem;
+    padding: clamp(2.5rem, 6vw, 5rem) var(--page-gutter);
   }
 
   #illustration {
@@ -274,14 +290,14 @@ import { NotepadText } from "@lucide/astro";
   }
 
   #title {
-    grid-column: span 2;
-    display: flex;
     justify-content: center;
   }
 
   #subtitle {
-    margin-block: 3rem;
-    letter-spacing: 0.07rem;
+    width: min(var(--text-width), 100%);
+    margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
+    margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+    letter-spacing: 0;
   }
 
   .btns-wrapper {
@@ -298,112 +314,183 @@ import { NotepadText } from "@lucide/astro";
   }
 
   .btn {
-    display: flex;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
     font-weight: 600;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 999px;
     text-decoration: none;
     color: var(--color-accent);
-    background: white;
-    box-shadow: var(--color-neutral-100) 0 0.5rem;
+    background: var(--color-neutral-0);
+    box-shadow: var(--color-neutral-100) 0 0.375rem;
     border: 2px solid var(--color-neutral-100);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  .btn:hover {
+    box-shadow: var(--color-neutral-100) 0 0.625rem;
+    transform: translateY(-0.125rem);
   }
 
   #workflow {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 0 20vw;
-    font-family: var(--font-inter);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
   }
 
   #cards {
-    grid-column: span 2;
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
+    margin-top: 1rem;
   }
 
-  #section-description {
+  .section-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
+  .section-description > p {
+    max-width: var(--text-width);
+    color: var(--color-muted);
+  }
+
+  .section-heading {
+    max-width: var(--text-width);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .section-heading p {
+    color: var(--color-muted);
+  }
+
   .number {
-    top: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    background: black;
-    color: white;
+    background: var(--color-highlight-strong);
+    color: var(--color-neutral-0);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 999;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
   }
 
   #image {
     display: flex;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
   }
 
   #image img {
-    width: 100%;
-    height: unset;
+    width: min(100%, 32rem);
+    height: auto;
   }
 
   .card {
-    position: relative;
-    padding: 1rem;
-    border: 1px solid black;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-tint);
+  }
+
+  .card h3 {
+    margin-bottom: 0.75rem;
+    min-height: 2.24em;
   }
 
   #knowhow {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 20vw;
+    grid-template-columns: minmax(0, 0.85fr) minmax(22rem, 1.15fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
   }
 
   #knowhow ul {
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
+    border-top: 1px solid var(--color-border);
   }
 
-  #section-description {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
+  #knowhow .btns-wrapper {
+    margin-top: 1.5rem;
   }
 
   #knowhow li {
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 1rem;
-    border: 1px solid black;
+    padding: 1.125rem 0;
+    border-bottom: 1px solid var(--color-border);
     gap: 1rem;
-    margin: 0;
+  }
+
+  #knowhow li :global(svg) {
+    flex: 0 0 auto;
+    color: var(--color-highlight-strong);
+  }
+
+  #knowhow li a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration-color: var(--color-8);
+    text-underline-offset: 0.25rem;
+  }
+
+  #knowhow li a:hover {
+    color: var(--color-accent);
+  }
+
+  #knowhow li:first-child a::after {
+    content: "new";
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.625rem;
+    padding: 0.125rem 0.45rem;
+    border-radius: 999px;
+    background: var(--color-6);
+    color: var(--color-5);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: 0.125rem;
   }
 
   .faq-container {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid var(--color-border);
   }
 
   .faq-item {
     overflow: hidden;
-    padding: 1rem;
-    transition: transform 0.3s ease-in-out;
-    border: 1px solid black;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      block-size 280ms ease,
+      content-visibility 280ms allow-discrete,
+      opacity 220ms ease;
+  }
+
+  .faq-item[open]::details-content {
+    block-size: auto;
+    opacity: 1;
   }
 
   .faq-question {
-    padding: var(--base-size);
+    padding: 1.25rem 0;
     font-weight: 600;
     cursor: pointer;
     list-style: none;
@@ -418,12 +505,15 @@ import { NotepadText } from "@lucide/astro";
 
   .faq-question::after {
     content: "+";
+    color: var(--color-accent);
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-left: 1rem;
     transition: transform 0.2s ease;
   }
 
   .faq-item[open] .faq-question {
-    color: var(--color-neutral-40);
-    border-bottom: var(--dark-bg-border);
+    color: var(--color-highlight-strong);
   }
 
   .faq-item[open] .faq-question::after {
@@ -431,8 +521,65 @@ import { NotepadText } from "@lucide/astro";
   }
 
   .faq-answer {
-    padding: var(--base-size);
-    font-size: calc(var(--base-size) * 0.8);
+    max-width: var(--text-width);
+    padding: 0 0 1.5rem;
+    color: var(--color-muted);
+    font-size: 1rem;
     line-height: 1.6;
+  }
+
+  @media (max-width: 52rem) {
+
+    #workflow,
+    #knowhow {
+      grid-template-columns: 1fr;
+    }
+
+    #workflow {
+      gap: 2.5rem;
+    }
+
+    #cards {
+      grid-template-columns: 1fr;
+      margin-top: 0;
+    }
+
+    #image {
+      grid-row: 2;
+    }
+
+    .card h3 {
+      min-height: 0;
+    }
+
+    #knowhow {
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 34rem) {
+    .hero-text {
+      padding-block: 2.25rem 2.75rem;
+    }
+
+    #subtitle {
+      text-align: left;
+    }
+
+    .btn,
+    .btns-wrapper {
+      width: 100%;
+    }
+
+    #illustration {
+      min-height: 4rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn,
+    .faq-item::details-content {
+      transition: none;
+    }
   }
 </style>
