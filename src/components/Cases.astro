@@ -1,6 +1,4 @@
 ---
-import CaseCard from "../components/CaseCard.astro";
-
 const cases = [
   {
     title: "Cryptonix",
@@ -34,36 +32,66 @@ for (const item of cases) {
 }
 ---
 
-<section id="cases">
-<h2>My cases</h2>
-
+<div class="container">
   {
     actualCases.map((item) => (
-      <CaseCard
-        title={item.title}
-        niche={item.niche}
-        scope={item.scope}
-        image={item.image}
-        href={item.href}
-      />
+      <a href={item.href} class="case-thumbnail">
+        <div class="case-cover">
+          <img src={item.image} alt={item.title} />
+        </div>
+        <div class="case-details">
+          <div>
+            <div class="case-title">{item.title}</div>
+            <div class="case-niche">{item.niche}</div>
+          </div>
+          <div>
+            <div class="case-scope">{item.scope}</div>
+          </div>
+        </div>
+      </a>
     ))
   }
-</section>
+</div>
 
 <style>
-  section {
+  .container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
   }
 
-  h2{
-    grid-column: span 3;
-    text-align: center;
+  .case-thumbnail {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border: 1px solid black;
+    overflow: hidden;
+    font-family: var(--font-inter);
+    text-decoration: none;
+    color: inherit;
   }
 
-  @media (max-width: 1024px) {
-    section {
-      flex-direction: column;
-    }
+  .case-details {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .case-cover {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .case-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .case-title {
+    font-family: var(--font-fredoka);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 </style>
