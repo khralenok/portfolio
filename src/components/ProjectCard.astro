@@ -1,0 +1,14 @@
+---
+import { ArrowUpRight, ArrowLeft, ArrowRight } from '@lucide/astro';
+import ProjectImage from './ProjectImage.astro';
+const { project, number, compact = false } = Astro.props;
+---
+<a class:list={['project-card', { compact }]} href={`/${project.id}/`}>
+  <div class:list={['project-visual', project.color, project.id]}>
+    <span class="visual-label">{project.client}</span>
+    <ProjectImage name={project.cover} alt={project.coverAlt ?? `${project.client} — ${project.category}`} />
+    <span class="view-case">View case <ArrowUpRight size={20} aria-hidden="true" /></span>
+  </div>
+  <div class="project-meta"><span class="eyebrow">{String(number).padStart(2, '0')} / {project.category}</span><span>{project.year}</span></div>
+  <h3>{project.title}</h3>
+</a>

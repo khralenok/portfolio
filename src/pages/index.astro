@@ -1,54 +1,50 @@
 ---
-import GlobalStyles from "../components/GlobalStyles.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Cases from "../components/Cases.astro";
-import Hero from "../components/Hero.astro";
-import Faq from "../components/Faq.astro";
-import { Font } from "astro:assets";
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectImage from '../components/ProjectImage.astro';
+import { ArrowDownRight, ArrowUpRight } from '@lucide/astro';
+import projects from '../data/projects.json';
+import profile from '../data/profile.json';
+import { getCollection } from 'astro:content';
+const writing = await getCollection('writing');
+const showreelUrl = `https://www.youtube.com/embed/${profile.showreelId}?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=${profile.showreelId}&playsinline=1`;
+const featured = ['cryptonix', 'incentive-performance', 'zvuk', 'incentive-ugc', 'cryptonix-sales', 'crowd-control'].map(id => projects.find(p => p.id === id)!);
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Grigorii Khralenok – Brand Designer" />
-    <meta
-      property="og:description"
-      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
-    />
-    <meta property="og:image" content="src/images/main-cover.jpg" />
-    <meta property="og:url" content="https://khralenok.com" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Grigorii Khralenok – Brand Designer" />
-    <meta
-      name="twitter:description"
-      content="Hi, I’m Grigorii Khralenok, a brand designer. I build durable visual systems that scale with business needs."
-    />
-    <meta name="twitter:image" content="src/images/main-cover.jpg" />
-    <title>Grigorii Khralenok – Brand Designer</title>
-    <Font cssVariable="--font-inter" />
-    <GlobalStyles />
-  </head>
-  <body>
-    <Header />
-
-    <main>
-      <Hero />
-
-      <Cases />
-
-      <Faq />
-    </main>
-
-    <Footer />
-  </body>
-</html>
+<Layout>
+  <section class="hero wrap">
+    <div class="hero-body">
+      <div class="hero-copy">
+        <h1>Brand design.<br />Creative direction.<br />CreativeOps.</h1>
+        <p class="hero-description">I build brands and the systems that help teams deliver them.</p>
+        <a class="pill" href="#work">Selected work <ArrowDownRight size={18} aria-hidden="true" /></a>
+      </div>
+      <div class="showreel">
+        <div class="showreel-player"><ProjectImage name="cryptonix-stand-cd386391.webp" alt="" eager={true} /><iframe id="showreel" title="Grigorii Khralenok — design showreel" src={showreelUrl} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </section>
+  <section id="work" class="work-section wrap">
+    <div class="section-heading"><h2>Selected work</h2></div>
+    <div class="project-grid">{featured.map((project, i) => <ProjectCard project={project} number={i + 1} />)}</div>
+  </section>
+  <section id="about" class="about-section"><div class="wrap">
+    <div class="section-heading"><h2>Direction, design, delivery.</h2></div>
+    <div class="approach-overview"><img class="workflow-illustration" src="/workflow-illustration.svg" alt="Illustration of a creative production workflow" width="320" height="320" loading="lazy" /><div class="about-intro">{profile.bio.map(paragraph => <p>{paragraph}</p>)}</div></div>
+    <div class="capabilities">
+      <div><h3>Creative direction</h3><p>Concept development, art direction, and team leadership.</p></div>
+      <div><h3>Brand & digital</h3><p>Visual systems, websites, illustration, motion, and campaigns.</p></div>
+      <div><h3>CreativeOps</h3><p>Templates, components, production workflows, and practical automation.</p></div>
+    </div>
+    <div class="experience"><span class="eyebrow">Experience</span><div><span>Cryptonix</span><span>Brand design & CreativeOps</span><span>2024–2026</span></div><div><span>Incentive Agency</span><span>Creative direction & design leadership</span><span>2023–2024</span></div><div><span>Zvuk Business</span><span>Brand design & illustration</span><span>2020–2023</span></div></div>
+  </div></section>
+  <section id="writing" class="writing-section wrap">
+    <div class="section-heading"><h2>Writing</h2><a class="icon-link" href={profile.substack} target="_blank" rel="noopener noreferrer">Substack <ArrowUpRight size={18} aria-hidden="true" /></a></div>
+    <div class="writing-list">{writing.map(article => <a href={`/writing/${article.id}/`}><h3>{article.data.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></a>)}</div>
+  </section>
+  <script>
+    const video = document.querySelector<HTMLIFrameElement>('#showreel');
+    if (video && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const url = new URL(video.src); url.searchParams.set('autoplay', '0'); video.src = url.toString();
+    }
+  </script>
+</Layout>

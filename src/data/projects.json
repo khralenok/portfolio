@@ -1,0 +1,582 @@
+[
+  {
+    "id": "cryptonix",
+    "client": "Cryptonix",
+    "title": "Brand, web & creative production",
+    "summary": "Taking an agency brand direction into production, building in Webflow, and bringing stalled tools through to launch.",
+    "category": "Brand design · CreativeOps",
+    "year": "2024–2026",
+    "color": "orange",
+    "cover": "cryptonix-bucket-hat-0cbb4383.webp",
+    "role": "Brand Designer | CreativeOps Manager",
+    "intro": "At Cryptonix, I worked across brand design, Webflow delivery, and creative operations. I helped turn an agency rebrand into a usable visual system and coordinated the people and technical details needed to ship websites, content, and tools.",
+    "metrics": [
+      [
+        "60+",
+        "pages launched by the team over roughly a year"
+      ],
+      [
+        "3",
+        "public tools: invoices, receipts, and conversion"
+      ]
+    ],
+    "sections": [
+      {
+        "title": "Turn a rebrand into something the team can use",
+        "paragraphs": [
+          "When I joined, Cryptonix used a dark identity with bright gradients. An agency rebrand was already underway, but extended approvals and changing scope left the handover incomplete. I maintained the existing brand, created social visuals, and worked on the website from design through Webflow implementation.",
+          "With a new marketing director, we revisited the agency material and I repeated the competitor review. We selected a white-and-orange direction and lightly adapted the proposed logo. The aim was to feel like familiar business infrastructure: clients wanted crypto payments, but the visual language needed to avoid the associations of speculative crypto culture."
+        ],
+        "images": [
+          {
+            "name": "recovered-cryptonix-color.webp",
+            "caption": "The competitor review supported a white-and-orange direction.",
+            "alt": "The competitor review supported a white-and-orange direction."
+          },
+          {
+            "name": "cryptonix-design-system-fd87ff13.webp",
+            "caption": "Typography and layout rules made the direction usable across formats.",
+            "alt": "Typography and layout rules made the direction usable across formats."
+          }
+        ]
+      },
+      {
+        "title": "Give each team the assets it actually needs",
+        "paragraphs": [
+          "I applied the direction across web, social media, sales, email, merchandise, and events. Illustrations shared colours and construction rules, making them useful to several teams. Social graphics used a consistent orange focal point and headline treatment.",
+          "Reuse differed by channel. I used the social templates myself; developers used the website system, marketing used email templates, and sales worked with presentation layouts. A shared library helped, but each handoff needed to fit the people and tools on the receiving end."
+        ],
+        "images": [
+          {
+            "name": "cryptonix-illustrations-54134e96.webp",
+            "caption": "Shared illustration elements supported several teams and communication needs.",
+            "alt": "Shared illustration elements supported several teams and communication needs."
+          },
+          {
+            "name": "cryptonix-visuals-11b9f60f.webp",
+            "caption": "The social treatment was a working template I used in ongoing production.",
+            "alt": "The social treatment was a working template I used in ongoing production."
+          },
+          {
+            "name": "recovered-cryptonix-merchandise.webp",
+            "caption": "The direction extended into merchandise and event touchpoints.",
+            "alt": "The direction extended into merchandise and event touchpoints."
+          }
+        ]
+      },
+      {
+        "title": "Finish the last difficult part of a stalled tool",
+        "paragraphs": [
+          "The crypto invoice generator had been stalled for about three months when I took it on. Most of the implementation was complete, but the remaining work involved cryptocurrency rounding, decimal precision, and API behaviour. The team lacked a shared understanding of how to resolve those details.",
+          "I decomposed the remaining tasks, separated responsibilities, and followed implementation through quality control. My experience in design and development, alongside an understanding of the product, helped bridge the gap between a nearly finished application and a working tool.",
+          "The wider tool work included a crypto receipt generator, a converter using current rates, and a separate partner-programme calculator. I coordinated design, development, and stakeholders for those projects. Getting them built also meant resolving different priorities around what marketing and sales needed."
+        ]
+      },
+      {
+        "title": "Make repeated delivery easier",
+        "paragraphs": [
+          "For website production, I brought product facts, SEO requirements, and implementation constraints into briefs before design and development handoffs. Content work combined AI-assisted drafting with factual checks, proofreading, and editorial review.",
+          "Over roughly a year, the team launched more than 60 pages and the three public tools. The publishing workflow also increased output from about one article per month to around four. Coordination continued to require attention; the systems reduced ambiguity rather than removing every dependency.",
+          "Looking back, I would invest earlier in deeper content automation. At the time, much of my capacity went into approvals, agency handover, and keeping designers, developers, and content contributors aligned."
+        ],
+        "diagram": {
+          "title": "Agree the inputs before handing work over",
+          "code": "graph LR\n A[SEO and product requirements] --> B[Draft and fact check]\n B --> C[UX and visual design]\n C --> D[Implementation]\n D --> E[Quality check and launch]",
+          "caption": "A simplified view of the production approach; individual pages and tools still required coordination.",
+          "summary": [
+            {
+              "title": "Agree the requirements",
+              "text": "Bring SEO priorities, product facts, and implementation constraints together."
+            },
+            {
+              "title": "Prepare the content",
+              "text": "Draft, verify facts, proofread, and review."
+            },
+            {
+              "title": "Design and implement",
+              "text": "Hand over agreed content and clearer specifications."
+            },
+            {
+              "title": "Check and launch",
+              "text": "Resolve implementation details and review the finished work."
+            }
+          ]
+        }
+      }
+    ],
+    "coverAlt": "Cryptonix orange and white branded bucket hat",
+    "scope": [
+      "Brand adaptation",
+      "Webflow & web production",
+      "Content & product tools"
+    ],
+    "challenge": "The company was moving from an early crypto-startup identity toward a more business-oriented brand. An incomplete agency handover, changing marketing leadership, and stalled product work all needed practical follow-through.",
+    "contribution": "I designed and built in Webflow, developed the visual applications, and coordinated SEO, content, UX/UI, and development. For tool launches, I clarified requirements, divided responsibilities, and followed implementation through quality control.",
+    "relatedWork": {
+      "title": "Sticker pack for Cryptonix",
+      "description": "Concept, illustration, and pre-press for a 2025 event sticker pack.",
+      "href": "https://www.behance.net/gallery/238254343/Sticker-Pack-for-Cryptonix"
+    }
+  },
+  {
+    "id": "incentive-performance",
+    "client": "Incentive Agency",
+    "title": "Performance creative at scale",
+    "summary": "A practical layout system and specialist handoffs for high-volume regional campaigns.",
+    "category": "Creative direction · Production systems",
+    "year": "2023–2024",
+    "color": "mint",
+    "cover": "recovered-apple-cover.webp",
+    "role": "Creative Director | Design Lead | Graphic Designer",
+    "intro": "At Incentive Agency, I grew from hands-on designer into a creative director responsible for both campaign production and regional content. I built a small internal design team and a working system for adapting performance creatives across languages, formats, and client requirements.",
+    "metrics": [],
+    "sections": [
+      {
+        "title": "Let content drive the layout",
+        "paragraphs": [
+          "Armenian headlines were a useful stress test: longer words made fixed templates and character limits unreliable. I borrowed ideas from responsive web design—minimum and maximum sizes, proportional relationships, and variables that influence surrounding elements.",
+          "The system connected type, spacing, and product placement so designers could adapt an offer across very narrow, tall, or compact placements. Regional managers also had different approval preferences, so the layouts needed room for practical adjustments."
+        ],
+        "images": [
+          {
+            "name": "recovered-apple-typography.webp",
+            "caption": "Different word lengths required flexible relationships between the headline and supporting content.",
+            "alt": "Different word lengths required flexible relationships between the headline and supporting content."
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "title": "Build a manual system people can operate",
+        "paragraphs": [
+          "A designer took the offer text from a task and placed it into shared components, which carried the content into the format templates. They checked those layouts before handing the package to motion. The motion designer applied presets and adjusted the details where needed.",
+          "This was a manual production system. People still needed to recognize awkward combinations, incorrect information, and format-specific problems. Shared components and recurring treatments gave junior designers a workable starting point without pretending that every asset would be correct automatically."
+        ],
+        "images": [
+          {
+            "name": "recovered-apple-adaptivity-still.webp",
+            "caption": "The original format-adaptation demonstration.",
+            "alt": "The original format-adaptation demonstration.",
+            "animated": "/artwork/apple-adaptivity.webp"
+          },
+          {
+            "name": "recovered-apple-animation-still.webp",
+            "caption": "Motion presets provided a repeatable starting point for each offer.",
+            "alt": "Motion presets provided a repeatable starting point for each offer.",
+            "animated": "/artwork/apple-animation.webp"
+          }
+        ]
+      },
+      {
+        "title": "Put acceptance checks inside the handoffs",
+        "paragraphs": [
+          "I hired two junior designers, replaced one as the workload changed, and later brought in a motion designer. As my content responsibilities expanded, I also delegated planning and deadline tracking to a social media manager. The team structure evolved with the actual workload.",
+          "The PPC owner could not inspect every package. Acceptance criteria between specialists handled routine checks: motion reviewed incoming graphics, and graphic designers reviewed the animation. Some client revisions came from incorrectly communicated offer terms, so internal design review could not prevent every change."
+        ],
+        "diagram": {
+          "title": "A package moves between specialists",
+          "code": "graph LR\n A[Offer text into shared components] --> B[Check format layouts]\n B --> C[Motion checks incoming graphics]\n C --> D[Presets and manual adjustments]\n D --> E[Graphic review and delivery]",
+          "caption": "Acceptance rules handled routine quality checks; changed client information could still send a package back.",
+          "summary": [
+            {
+              "title": "Prepare the layouts",
+              "text": "Insert the offer into shared components and review the format variants."
+            },
+            {
+              "title": "Accept the graphics",
+              "text": "The motion designer checks the incoming package."
+            },
+            {
+              "title": "Animate and adjust",
+              "text": "Apply presets and handle exceptions manually."
+            },
+            {
+              "title": "Review and deliver",
+              "text": "Check the animated work and prepare the package."
+            }
+          ]
+        }
+      },
+      {
+        "title": "Maintain the system under real workload",
+        "paragraphs": [
+          "Production covered multiple regional markets and other agency clients. The exact market count varied, so the useful story is how the system handled more assets, languages, and people reviewing the work.",
+          "I kept track of capacity, holidays, promotion peaks, and changing client requirements. Task tracking, postmortems, acceptance criteria, and regular library maintenance helped keep the operation usable. It still depended on active management.",
+          "Today, I would automate more of the repeatable adaptation logic. That is a lesson from this project; the system I delivered relied on components, instructions, and specialist judgement."
+        ]
+      }
+    ],
+    "coverAlt": "Apple product imagery from the archived reseller portfolio",
+    "scope": [
+      "Responsive layout rules",
+      "Manual production system",
+      "Hiring & specialist review"
+    ],
+    "challenge": "Campaign production depended on an expensive outsourced specialist, while regional requests and content work were growing. Junior designers needed a system they could use reliably under tight deadlines.",
+    "contribution": "I hired and onboarded junior designers and a motion specialist, defined the design rules and acceptance criteria, and maintained the production process. Client-facing account work initially sat with the account manager and PPC project owner."
+  },
+  {
+    "id": "zvuk",
+    "client": "Zvuk Business",
+    "title": "Visual storytelling for B2B music",
+    "summary": "An expressive visual language for a B2B music service, designed around the resources of a small team.",
+    "category": "Brand systems · Illustration",
+    "year": "2020–2023",
+    "color": "violet",
+    "cover": "zvuk-photo-v1.png",
+    "role": "Brand Designer | Illustrator",
+    "intro": "Zvuk Business provides music for commercial spaces. I adapted inherited brand elements into a practical B2B communication system and created a visual narrative that could explain abstract ideas across industries.",
+    "metrics": [
+      [
+        "40+",
+        "website pages launched with product and marketing"
+      ],
+      [
+        "200+",
+        "presentations designed with the sales team"
+      ]
+    ],
+    "sections": [
+      {
+        "title": "Turn inherited assets into working rules",
+        "paragraphs": [
+          "The parent brand supplied SB Sans Display, a logo, and a pictogram. I selected violet from the available colour directions, refined its tone, and built a broader palette. Type hierarchy, spacing, and layout were defined in relation to the body-text size.",
+          "The system had to work for a small team producing many different communications. Clear rules created a common foundation for website visuals, compact icons, social posts, and enterprise presentations."
+        ],
+        "images": [
+          {
+            "name": "zvuk-resources-a7d46429.webp",
+            "caption": "The inherited logo, pictogram, and typeface were the starting resources.",
+            "alt": "The inherited logo, pictogram, and typeface were the starting resources."
+          },
+          {
+            "name": "zvuk-design-system-8fd03f0d.webp",
+            "caption": "A violet-led palette and relational typography extended those resources into a usable system.",
+            "alt": "A violet-led palette and relational typography extended those resources into a usable system."
+          }
+        ]
+      },
+      {
+        "title": "Give an invisible service a visual story",
+        "paragraphs": [
+          "Illustration could show what a photograph could not: sound, atmosphere, and the relationship between music and a business setting. Characters and familiar objects made the message concrete, with exaggeration and humour providing room to explain abstract concepts.",
+          "A typical composition combined a character, an industry-specific background, and a rounded brand shape. The character represented a customer, employee, or business owner; the setting established the use case. That repeatable structure made each image recognizable without forcing every story into the same scene."
+        ],
+        "images": [
+          {
+            "name": "zvuk-original-illustrations.webp",
+            "caption": "Character, industry context, and brand shape form the illustration framework.",
+            "alt": "Character, industry context, and brand shape form the illustration framework."
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "title": "Build a library, then tailor the story",
+        "paragraphs": [
+          "Reusable character and scene elements reduced the need to draw every visual from scratch. The same library could support different industries, and colours could be adapted for client-specific presentation contexts.",
+          "Social graphics paired illustrations with a clear title and subtitle. A contrasting green accent and variations of the rounded brand shape kept the feed varied while retaining the violet-led identity."
+        ],
+        "images": [
+          {
+            "name": "recovered-zvuk-components.webp",
+            "caption": "Character components supported new compositions from an existing library.",
+            "alt": "Character components supported new compositions from an existing library."
+          },
+          {
+            "name": "zvuk-original-visuals.webp",
+            "caption": "Different topics share a recognizable illustration and headline treatment.",
+            "alt": "Different topics share a recognizable illustration and headline treatment."
+          },
+          {
+            "name": "zvuk-original-icons.webp",
+            "alt": "Zvuk Business illustrated icon library and record player",
+            "caption": "A compact illustrated icon library carries the same character into smaller formats."
+          }
+        ]
+      },
+      {
+        "title": "Carry the language into sales and web",
+        "paragraphs": [
+          "Enterprise sales needed tailored presentations rather than one generic deck. Illustration gave those decks a flexible way to represent the prospect’s business context. Website visuals used the same vocabulary to explain the service and its applications.",
+          "Across my work with the team, the visual toolkit supported more than 40 website pages and over 200 presentations. Reusable elements let us tailor the work to different clients while retaining a consistent visual language."
+        ],
+        "images": [
+          {
+            "name": "recovered-zvuk-pitchdecks.webp",
+            "caption": "Presentation examples show the illustration system alongside business information.",
+            "alt": "Presentation examples show the illustration system alongside business information."
+          },
+          {
+            "name": "recovered-zvuk-website.webp",
+            "caption": "The visual vocabulary carried into the product website.",
+            "alt": "The visual vocabulary carried into the product website."
+          }
+        ]
+      }
+    ],
+    "coverAlt": "Photographic presentation mockup of Zvuk Business illustration in a music shop",
+    "coverCredit": "Presentation mockup based on original Zvuk Business artwork.",
+    "scope": [
+      "Visual system",
+      "Illustration library",
+      "Web & sales presentations"
+    ],
+    "challenge": "Music for a business is an invisible product. The brand needed to explain atmosphere, customer experience, and industry-specific use cases without falling back on generic personal-listening imagery.",
+    "contribution": "I built a visual language around inherited brand resources, developed illustration guidelines and reusable assets, and applied them with marketing, product, and sales across everyday communications."
+  },
+  {
+    "id": "incentive-ugc",
+    "client": "Incentive Agency",
+    "title": "Art direction & regional content",
+    "summary": "Building regional creator production from initial experiments into an ongoing content programme.",
+    "category": "Creative direction · Distributed production",
+    "year": "2023–2024",
+    "color": "blue",
+    "cover": "content-strategy-1-285519e3.jpg",
+    "role": "Creative Director | Design Lead | Graphic Designer",
+    "intro": "Incentive Agency had demonstrated creator content to a client, but needed a way to produce it repeatedly across regional accounts. I owned content strategy, concepts, art direction, budgets, and production coordination, working with local creators and account managers.",
+    "metrics": [
+      [
+        "800+",
+        "publications created from the programme’s output"
+      ]
+    ],
+    "sections": [
+      {
+        "title": "Build production beyond the first experiments",
+        "paragraphs": [
+          "The agency had run initial shoots with creators in Ukraine and sold the service, but a repeatable production approach still needed to be built. I found creators through personal contacts, referrals, and social platforms, then onboarded and coordinated them through real assignments.",
+          "Early assignments were usually lower-priority briefs. I assessed the same qualities needed for ongoing work: quality, delivery speed, clear communication, and realistic capacity. A reliable creator raised risks early and avoided taking on more than they could complete."
+        ]
+      },
+      {
+        "title": "Plan around access, language, and availability",
+        "paragraphs": [
+          "Creators rarely owned the newest devices. Product shoots often depended on a partner flagship store lending equipment, with paperwork and availability to arrange. Sometimes a suitable device owner in another region provided an alternative.",
+          "Casting also needed the right language and local context. Those requirements could overlap: a brief might need both device access and a suitable speaker. Location was one part of the decision, alongside availability, capability, and the regional budget."
+        ],
+        "diagram": {
+          "title": "Check the requirements together",
+          "code": "graph LR\n A[Brief and regional budget] --> B[Device access]\n B --> C[Language and local context]\n C --> D[Creator capacity]\n D --> E[Assign production and editing]",
+          "caption": "These are combined checks, not exclusive creator categories. A brief can depend on several requirements at once.",
+          "summary": [
+            {
+              "title": "Brief and budget",
+              "text": "Define the creative idea and regional constraints."
+            },
+            {
+              "title": "Device access",
+              "text": "Arrange store equipment or find a suitable device owner."
+            },
+            {
+              "title": "Language and context",
+              "text": "Confirm the talent fits the actual audience and script."
+            },
+            {
+              "title": "Capacity and roles",
+              "text": "Check availability and decide who films and edits."
+            }
+          ]
+        }
+      },
+      {
+        "title": "Stay close enough to resolve production problems",
+        "paragraphs": [
+          "I stayed available during filming. Missing audio, an unexpected language mismatch, or a store unable to release equipment could put the brief at risk. Resolving those problems was part of production coordination, alongside protecting relationships with creators through client revisions.",
+          "Responsibilities were allocated to manage dependency as well as cost. Creators often edited their own work; when their filming workload grew, editing could move to a motion designer. I also filled gaps with my own filming when necessary. Different briefs needed different arrangements."
+        ],
+        "images": [
+          {
+            "name": "brand-new-content-879011f5.jpg",
+            "caption": "Photography by Tolegen, produced under my art direction.",
+            "alt": "A mural photographed on a residential building by Tolegen"
+          },
+          {
+            "name": "ugc-manat-portrait-edited.png",
+            "caption": "Photography by Manat (@manamontano).",
+            "alt": "Orange-lit portrait photographed by Manat"
+          }
+        ],
+        "galleryClass": "matched-photos"
+      },
+      {
+        "title": "Make the plan fit the budget",
+        "paragraphs": [
+          "I worked with regional content plans and budgets, adjusting the mix of shoots, creator locations, and editing. Combining production where possible helped create more publishable material, but reuse across markets was uncommon and usually required re-editing.",
+          "The programme produced more than 800 publications from the material created. This is a count of published content items, rather than a count of separate shoots or videos. My responsibility was to keep the creative output moving while managing the people, costs, and practical constraints behind it."
+        ]
+      }
+    ],
+    "credit": "Photography by Salimkerey, Tolegen.",
+    "scope": [
+      "Content strategy & art direction",
+      "Creator production",
+      "Budgets & regional coordination"
+    ],
+    "challenge": "Moving beyond a few initial shoots meant organizing device access, language requirements, creator capacity, and regional budgets. Production mistakes and unplanned revisions could quickly consume the agency’s margin.",
+    "contribution": "I planned content, wrote and directed briefs, sourced and onboarded creators, coordinated equipment and filming, and controlled quality and spending. Local creators often handled locations and casting; editing stayed with the creator or moved to a motion designer when needed."
+  },
+  {
+    "id": "cryptonix-sales",
+    "client": "Cryptonix",
+    "title": "Modular sales collateral",
+    "summary": "Clarifying a crypto-payments product and building editable presentation, one-pager, and proposal templates for sales.",
+    "category": "Communication strategy · Sales enablement",
+    "year": "February 2026",
+    "color": "orange",
+    "cover": "cryptonix-sales-photo-v1.png",
+    "role": "Designer and strategist, collaborating with the Sales Lead",
+    "intro": "A newly staffed Cryptonix sales team needed materials quickly and wanted to reshape them without a designer. I built the content structure with the Sales Lead, designed the toolkit, and assembled editable templates in Google Slides.",
+    "metrics": [],
+    "sections": [
+      {
+        "title": "Start with how the product is used",
+        "paragraphs": [
+          "Through my work with the product, I had come to see two main ways of using it: integrating through the API, or operating through the dashboard. Existing marketing descriptions focused on plugins, buttons, and checkout pages, which could obscure that simpler distinction.",
+          "I organized the material around those two paths. The Sales Lead supplied knowledge of prospects and their use cases, helping us decide which capabilities mattered in each conversation."
+        ],
+        "diagram": {
+          "title": "Build the story around the prospect",
+          "code": "graph TD\n A[Shared product explanation] --> B[API integration]\n A --> C[Dashboard use]\n B --> D[Relevant workflows and capabilities]\n C --> D\n D --> E[Industry context]\n E --> F[Commercial proposal]",
+          "caption": "The integration path establishes the context; relevant capabilities and commercial details complete the pitch.",
+          "summary": [
+            {
+              "title": "Explain the product",
+              "text": "Start with a consistent account of what the service does."
+            },
+            {
+              "title": "Choose the usage path",
+              "text": "API integration or day-to-day dashboard use."
+            },
+            {
+              "title": "Select relevant capabilities",
+              "text": "Show what matters to this prospect, such as receiving payments or making payouts."
+            },
+            {
+              "title": "Complete the proposal",
+              "text": "Adapt the industry examples and commercial material."
+            }
+          ]
+        }
+      },
+      {
+        "title": "Include the capabilities a prospect needs",
+        "paragraphs": [
+          "A prospect needing mass payouts has a different conversation from one simply receiving payments. Some businesses need on/off-ramp capabilities; others already have payment providers and care most about fitting another service into their existing setup.",
+          "Working with sales, I adapted the content and slide variations around those needs. The toolkit covered presentations, one-pagers, and commercial proposals, with icons, cards, illustrations, and covers supporting the narrative."
+        ]
+      },
+      {
+        "title": "Make the toolkit easy to edit",
+        "paragraphs": [
+          "I designed at 1920 × 1080 to make transferring elements from Figma straightforward, and kept elements native to Google Slides where practical. Placeholders let the sales team replace information in familiar template layouts.",
+          "The grid supported elements spanning different widths, and the components gave editors consistent options for content. The goal was a usable working package: sales could change a pitch without rebuilding its visual structure."
+        ]
+      },
+      {
+        "title": "Hand over work the team can use",
+        "paragraphs": [
+          "After delivery, the team continued using the package and rarely returned for additions. That practical independence is the clearest result I observed.",
+          "I asked for feedback to guide improvements, but did not receive detailed responses. The case therefore focuses on the delivered toolkit and its continued use, without attributing sales performance to the presentation design."
+        ]
+      }
+    ],
+    "coverAlt": "Photographic presentation mockup of Cryptonix sales materials",
+    "coverCredit": "Presentation mockup based on original sales-deck artwork.",
+    "scope": [
+      "Product narrative",
+      "Decks, one-pagers & proposals",
+      "Editable Google Slides templates"
+    ],
+    "challenge": "Sales needed to start pitching with an incomplete set of materials. The product story mixed several features and integrations, making it harder to explain what a particular prospect would actually use.",
+    "contribution": "I developed the narrative skeleton, refined it with the Sales Lead, designed the visual elements, and assembled the template system for the planned industry outreach."
+  },
+  {
+    "id": "crowd-control",
+    "client": "Crowd Control",
+    "title": "Identity & website launch",
+    "summary": "An identity, mascot, and Tilda website built for an influencer-matching service’s launch.",
+    "category": "Brand design · Web design & build",
+    "year": "2023",
+    "color": "violet",
+    "cover": "cc-landing-c0dad3a0.webp",
+    "role": "Brand & Web Designer",
+    "intro": "In spring–summer 2023, I designed and built a Tilda website for an influencer-matching service initially targeting gaming businesses. The logo, mascot, and visual system supported that launch; the client team provided the name and copy.",
+    "metrics": [],
+    "sections": [
+      {
+        "title": "Build the identity around the launch",
+        "paragraphs": [
+          "The project came through a former marketing director I had worked with at Zvuk. The client wanted an illustrated direction related to that work. Gaming was the initial business focus, which gave the character and visual tone a useful starting point.",
+          "I designed the wordmark and compact mark, then developed the typography, colour palette, and interface around the illustration. The identity supported a concrete deliverable: a website ready for campaign traffic."
+        ],
+        "images": [
+          {
+            "name": "cc-logo-9d3356f5.webp",
+            "caption": "The wordmark and compact mark were part of the launch identity.",
+            "alt": "The wordmark and compact mark were part of the launch identity."
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "title": "Give the gaming direction a character",
+        "paragraphs": [
+          "Booster rides a vehicle somewhere between a space scooter and a rocket. The gaming context and the brand’s emphasis on success shaped the energetic character, with bold lettering and vivid colour following that direction.",
+          "The initial site included several illustrations, with a larger series envisaged. Later requirements reduced their role. When the site was adapted toward beauty businesses, we moved away from this illustrated language for that audience."
+        ],
+        "images": [
+          {
+            "name": "cc-mascot-8af48dbd.webp",
+            "caption": "Booster was developed for the initial gaming-oriented direction.",
+            "alt": "Booster was developed for the initial gaming-oriented direction."
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "title": "Design for the way the site would be maintained",
+        "paragraphs": [
+          "I used a triadic palette, clear text contrast, and a type-led spacing system. The main practical constraint was the Tilda implementation: I worked largely with standard blocks and design overrides to keep ongoing updates manageable.",
+          "That choice influenced the interface. Familiar section structures and reusable components gave the site a consistent foundation while keeping it close to the platform’s existing building blocks."
+        ],
+        "images": [
+          {
+            "name": "cc-colors-063aec9c.webp",
+            "caption": "The palette gave the initial website a clear, energetic visual hierarchy.",
+            "alt": "The palette gave the initial website a clear, energetic visual hierarchy."
+          },
+          {
+            "name": "cc-ui-27afb764.webp",
+            "caption": "Interface components supported a consistent website implementation.",
+            "alt": "Interface components supported a consistent website implementation."
+          }
+        ]
+      },
+      {
+        "title": "Launch, then adapt to changing requirements",
+        "paragraphs": [
+          "I designed and built the website from the team’s supplied copy. There was no dedicated user-behaviour analysis available, so I worked with familiar landing-page patterns and the client’s requirements.",
+          "The site launched, and I returned for two later rounds of updates, roughly a year and two years afterward. It continued under a different name with much of the design retained. The story is a delivered website and subsequent adaptations; conversion performance was not available to me."
+        ],
+        "images": [
+          {
+            "name": "cc-landing-c0dad3a0.webp",
+            "caption": "The original landing-page design, which I implemented in Tilda.",
+            "alt": "The original landing-page design, which I implemented in Tilda."
+          }
+        ],
+        "layout": "full"
+      }
+    ],
+    "coverAlt": "Crowd Control website presented on a laptop mockup",
+    "scope": [
+      "Identity & mascot",
+      "Website design",
+      "Tilda implementation"
+    ],
+    "challenge": "The service needed a working website for advertising campaigns. The client wanted an energetic illustrated direction, while the implementation needed to remain practical to update.",
+    "contribution": "I designed the logo, character, interface, and website, and implemented it in Tilda. The client supplied naming and written content. I later returned for two rounds of website updates."
+  }
+]
