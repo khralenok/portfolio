@@ -1,0 +1,36 @@
+---
+interface Props { videos: { url: string; label: string }[]; title?: string; description?: string; account?: string; id?: string; profileUrl?: string; }
+const { videos, title = 'Published work', description = 'Selected videos produced for iOfficial Kazakhstan.', account = 'iofficial_kazakhstan', id = 'published-videos', profileUrl } = Astro.props;
+---
+<section class="published-videos" id={id} aria-labelledby={`${id}-title`}>
+  <div class="instagram-heading"><h2 id={`${id}-title`}>{title}</h2>{profileUrl && <a class="profile-link" href={profileUrl} target="_blank" rel="noopener noreferrer">Instagram</a>}</div>
+  <p>{description}</p>
+  {videos.length > 0 && <div class:list={["instagram-grid", { "three-columns": videos.length === 3 }]}>
+    {videos.map(video => <div class="instagram-item">
+      <blockquote class="instagram-media" data-instgrm-permalink={video.url} data-instgrm-version="14">
+        <a href={video.url} target="_blank" rel="noopener noreferrer">View on Instagram</a>
+        <p>@{account}</p>
+      </blockquote>
+      <a class="reel-link" href={video.url} target="_blank" rel="noopener noreferrer">{video.label}</a>
+    </div>)}
+  </div>}
+</section>
+{videos.length > 0 && <script is:inline async src="https://www.instagram.com/embed.js"></script>}
+<style>
+  .published-videos { padding:24px 0 50px; }
+  .instagram-heading { display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
+  .profile-link { font-size:var(--type-small); text-decoration:underline; text-underline-offset:4px; }
+  h2 { font-size:calc(var(--type-body) * 1.777778); margin-bottom:12px; }
+  .published-videos>p { font-size:var(--type-body); color:var(--muted); margin-bottom:28px; }
+  .instagram-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; max-width:1112px; margin-inline:auto; }
+  .instagram-grid.three-columns { grid-template-columns:repeat(3,minmax(0,1fr)); max-width:1400px; }
+  @media(max-width:1000px) { .instagram-grid.three-columns { grid-template-columns:minmax(0,1fr); max-width:540px; } }
+  .instagram-item { min-width:0; overflow:hidden; }
+  .instagram-media { background:white; border:1px solid var(--line); border-radius:3px; padding:24px; margin:0; min-height:480px; }
+  .instagram-media>a { text-decoration:underline; text-underline-offset:4px; }
+  .instagram-media p { font-size:var(--type-small); margin-top:12px; }
+  :global(.instagram-item iframe.instagram-media) { width:100% !important; min-width:0 !important; max-width:540px !important; margin:0 !important; }
+  .reel-link { display:block; margin-top:12px; font-size:var(--type-small); color:var(--color-blue); text-underline-offset:4px; }
+  .reel-link:hover,.reel-link:focus-visible { text-decoration:underline; }
+  @media(max-width:700px) { .instagram-grid { grid-template-columns:minmax(0,1fr); max-width:540px; } }
+</style>

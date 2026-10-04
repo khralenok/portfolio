@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+const sources = import.meta.glob<{ default: ImageMetadata }>('../images/selected/*', { eager: true });
+const { name, alt, eager = false, class: className = '', width = 1400, animated, nativeLimit = false, sizes = "(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 64px), (max-width: 1512px) calc(100vw - 112px), 1400px" } = Astro.props;
+const source = sources[`../images/selected/${name}`]?.default;
+if (!source) throw new Error(`Missing selected image: ${name}`);
+const widths = [...new Set([400, 640, 800, 1120, 1400, 1680, 1920, 2240, 2800].filter(w => w < source.width).concat(source.width))].sort((a,b) => a-b);
+---
+{animated ? <picture class="animated-artwork">
+  <source srcset={animated} media="(prefers-reduced-motion: no-preference)" type="image/webp" />
+  <Image src={source} alt={alt} width={Math.min(width, source.width)} format="webp" quality={95} loading={eager ? 'eager' : 'lazy'} decoding="async" class={className} style={nativeLimit ? `max-width:${source.width}px;margin-inline:auto` : undefined} />
+</picture> : <Image src={source} alt={alt} width={Math.min(width, source.width)} widths={widths} sizes={sizes} format="webp" quality={95} loading={eager ? 'eager' : 'lazy'} decoding="async" class={className} style={nativeLimit ? `max-width:${source.width}px;margin-inline:auto` : undefined} />}

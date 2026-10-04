@@ -1,62 +1,32 @@
 ---
-import { getCollection, render, type CollectionEntry } from "astro:content";
-import GlobalStyles from "../components/GlobalStyles.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import CaseHighlights from "../components/CaseHighlights.astro";
-import Article from "../components/Article.astro";
-import CaseHero from "../components/CaseHero.astro";
-import Cases from "../components/Cases.astro";
-import { Font } from "astro:assets";
-
-export async function getStaticPaths() {
-  const cases = await getCollection("cases");
-
-  return cases.map((caseStudy: CollectionEntry<"cases">) => ({
-    params: {
-      id: caseStudy.id,
-    },
-    props: {
-      caseStudy,
-    },
-  }));
-}
-
-const { caseStudy } = Astro.props;
-
-const { Content } = await render(caseStudy);
-
-const currentUrl = "https://khralenok.com/" + Astro.url.pathname;
-const caseTitle = "Grigorii Khralenok - " + caseStudy.data.title + " Case Study"
+import { ArrowUpRight, ArrowLeft } from '@lucide/astro';
+import Layout from '../layouts/Layout.astro';
+import ProjectImage from '../components/ProjectImage.astro';
+import ProcessDiagram from '../components/ProcessDiagram.astro';
+import InstagramGallery from '../components/InstagramGallery.astro';
+import ArtworkMockup from '../components/ArtworkMockup.astro';
+import projects from '../data/projects.json';
+export function getStaticPaths() { return projects.map(project => ({ params: { id: project.id }, props: { project } })); }
+const { project } = Astro.props;
+const next = projects[(projects.findIndex(p => p.id === project.id) + 1) % projects.length];
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={caseStudy.data.description}>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content={caseTitle}>
-    <meta property="og:description" content={caseStudy.data.description}>
-    <meta property="og:image" content={caseStudy.data.cover.src}>
-    <meta property="og:url" content={currentUrl}>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={caseTitle}>
-    <meta name="twitter:description" content={caseStudy.data.description}>
-    <meta name="twitter:image" content={caseStudy.data.cover.src}>
-    <title>{caseTitle}</title>
-    <Font cssVariable="--font-inter" />
-    <GlobalStyles />
-  </head>
-  <body>
-    <Header />
-    <CaseHero {...caseStudy.data} />
-    <CaseHighlights {...caseStudy.data} />
-    <Article {Content} />
-    <Cases />
-    <Footer />
-  </body>
-</html>
+<Layout title={`${project.client}: ${project.title} — Grigorii Khralenok`} description={project.summary}>
+  <article class="case wrap">
+    <a class="back-link" href="/#work"><ArrowLeft size={16} aria-hidden="true" /> All work</a>
+    <header class="case-heading"><p class="eyebrow">{project.client} / {project.category}</p><h1>{project.title}</h1><p class="case-lead">{project.intro}</p><div class="case-info"><div><span class="eyebrow">My role</span><p>{project.role}</p></div><div><span class="eyebrow">Period</span><p>{project.year}</p></div></div><ul class="case-scope" aria-label="Project scope">{project.scope.map(item => <li>{item}</li>)}</ul></header>
+    <div class:list={['case-cover', project.color, project.id]}><ProjectImage name={project.cover} alt={project.coverAlt ?? `${project.client}: selected project application`} eager={true} width={1600} /></div>
+    {project.coverCredit && <p class="image-credit">{project.coverCredit}</p>}
+    {project.credit && <p class="image-credit">{project.credit}</p>}
+    {project.metrics.length > 0 && <div class="metrics">{project.metrics.map(([value, label]) => <div><strong>{value}</strong><span>{label}</span></div>)}</div>}
+    <div class="case-brief"><div><h2>The challenge</h2><p>{project.challenge}</p></div><div><h2>My contribution</h2><p>{project.contribution}</p></div></div>
+    {project.videos && <InstagramGallery videos={project.videos} />}
+    <nav class="case-index" aria-label="Case study sections">{project.sections.map((section, i) => <a href={`#section-${i + 1}`}><span>{String(i + 1).padStart(2, '0')}</span>{section.title}</a>)}</nav>
+    <div class="case-sections">{project.sections.map((section, i) => <section class="case-section" id={`section-${i + 1}`}>
+      <div class="case-section-text"><div class="case-section-heading"><span class="eyebrow">{String(i + 1).padStart(2, '0')}</span><h2>{section.title}</h2></div><div>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></div>
+      {section.diagram && <ProcessDiagram diagram={section.diagram} />}
+      {section.images && <div class:list={['case-gallery', section.galleryClass, { 'gallery-full': section.layout === 'full' }]}>{section.images.map((image, imageIndex) => <figure>{image.mockup ? <ArtworkMockup kind={image.mockup} alt={image.alt} /> : <ProjectImage name={image.name} alt={image.alt} animated={image.animated} nativeLimit={true} width={1400} sizes={section.layout === 'full' || (section.images.length % 2 === 1 && imageIndex === section.images.length - 1) ? '(max-width:700px) calc(100vw - 40px), (max-width:1100px) calc(100vw - 64px), (max-width:1512px) calc(100vw - 112px), 1400px' : '(max-width:700px) calc(100vw - 40px), (max-width:1100px) calc((100vw - 84px) / 2), (max-width:1512px) calc((100vw - 132px) / 2), 690px'} />}<figcaption>{image.caption}</figcaption></figure>)}</div>}
+    </section>)}</div>
+    {project.relatedWork && <aside class="related-work"><span class="eyebrow">Related work</span><a class="icon-link" href={project.relatedWork.href} target="_blank" rel="noopener noreferrer"><h3>{project.relatedWork.title}</h3><ArrowUpRight size={20} aria-hidden="true" /></a><p>{project.relatedWork.description}</p></aside>}
+    <a class="next-case" href={`/${next.id}/`}><span class="eyebrow">Next case / {next.client}</span><h2>{next.title} <ArrowUpRight size={20} aria-hidden="true" /></h2></a>
+  </article>
+</Layout>

@@ -1,0 +1,11 @@
+---
+import { ArrowUpRight, ArrowLeft, ArrowRight } from '@lucide/astro';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+export async function getStaticPaths() { return (await getCollection('writing')).map(article => ({ params: { id: article.id }, props: { article } })); }
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+<Layout title={`${article.data.title} — Grigorii Khralenok`} description={article.data.description}>
+  <article class="essay wrap"><a class="back-link" href="/#writing"><ArrowLeft size={16} aria-hidden="true" /> All writing</a><header><p class="eyebrow">Notes from practice / Essay</p><h1>{article.data.title}</h1><p class="case-lead">{article.data.description}</p><p class="essay-byline">By Grigorii Khralenok</p></header><div class="prose"><Content /></div><a class="essay-return" href="/#writing">More writing <ArrowUpRight size={16} aria-hidden="true" /></a></article>
+</Layout>

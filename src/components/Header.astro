@@ -1,42 +1,8 @@
-<header>
-  <div id="logo">
-    <a href="/">Grigorii Khralenok</a>
-  </div>
-  <div class="btn">
-    <a href="mailto:khralenok.g@gmail.com" target="_blank">Inquire</a>
-  </div>
+---
+import profile from '../data/profile.json';
+---
+<header class="site-header wrap">
+  <a class="wordmark" href="/" aria-label={`${profile.name} home`}><img src="/khr-logo.svg" alt={profile.name} width="144" height="36" /></a>
+  <nav aria-label="Main navigation"><a href="/#work">Work</a><a href="/#about">Approach</a><a href="/#writing">Writing</a></nav>
+  <a class="contact-link" href={`mailto:${profile.email}`} aria-label={`Email ${profile.name}`}><span>Let’s talk</span></a>
 </header>
-
-<style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: calc(var(--base-size)*0.75) var(--base-size);
-  }
-  #logo {
-    --logo-size: var(--base-size * 1.25);
-    font-size: var(--logo-size);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: calc(var(--logo-size) * 0.01);
-    color: var(--color-neutral-80);
-  }
-
-  a:link {
-    text-decoration: none;
-  }
-
-  a:link,
-  a:visited {
-    color: inherit;
-  }
-
-  .btn a {
-    text-decoration: none;
-    color: var(--color-neutral-0);
-    padding: calc(var(--base-size)*0.5) var(--base-size);
-    background-color: var(--color-accent-100);
-    border-radius: calc(var(--base-size)*0.5);
-  }
-</style>

@@ -1,0 +1,34 @@
+---
+import { getImage } from 'astro:assets';
+import deck from '../images/selected/zvuk-deck-panels-v3.png';
+import website from '../images/selected/zvuk-website-sections-v3.png';
+const { kind, alt } = Astro.props;
+const source = kind === 'deck' ? deck : website;
+const optimized = await getImage({ src:source, width:source.width, format:'webp', quality:95 });
+const crops = kind === 'deck' ? [[42,59,775,418],[854,59,775,418],[42,513,775,376],[854,513,775,376]] : [[100,72,450,818],[601,72,470,818],[1122,72,450,818]];
+---
+<div class:list={['artwork-mockup',kind]} role="img" aria-label={alt}>
+  <div class="mockup-items">{crops.map(([x,y,w,h]) => <div class="mockup-object">
+    <div class="artwork-window" style={`aspect-ratio:${w}/${h}`}>
+      <img src={optimized.src} alt="" loading="lazy" decoding="async" width={source.width} height={source.height} style={`width:${source.width/w*100}%;height:${source.height/h*100}%;left:${-x/w*100}%;top:${-y/h*100}%`} />
+    </div>
+  </div>)}</div>
+</div>
+<style>
+.artwork-mockup { overflow:hidden; border-radius:6px; padding:clamp(24px,5vw,72px); background:radial-gradient(ellipse at 30% 10%,#faf9f6,#e9e6e0); }
+.mockup-items { display:grid; position:relative; align-items:center; }
+.deck .mockup-items { grid-template-columns:1fr 1fr; gap:clamp(20px,3vw,48px); padding:12px; }
+.deck .mockup-object { background:white; padding:2px; box-shadow:0 2px 0 #d6d2cb,0 4px 0 #f9f8f5,0 6px 0 #d9d5cc,0 18px 28px -12px #34302c45; }
+.deck .mockup-object:nth-child(1) { transform:rotate(-3deg); }
+.deck .mockup-object:nth-child(2) { transform:rotate(2deg) translateY(8px); }
+.deck .mockup-object:nth-child(3) { transform:rotate(1.5deg); }
+.deck .mockup-object:nth-child(4) { transform:rotate(-2deg); }
+.website { background:radial-gradient(ellipse at 40% 0%,#f7f5ff,#e5dff2); }
+.website .mockup-items { grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(12px,3vw,44px); padding:10px 0; }
+.website .mockup-object { position:relative; padding:clamp(4px,.7vw,10px); background:linear-gradient(120deg,#51505b,#16151e 30%,#32313b); border-radius:clamp(14px,2vw,30px); border:1px solid #686575; box-shadow:0 22px 30px -12px #26203560, inset 0 0 0 2px #ffffff25; }
+.website .mockup-object:nth-child(2) { transform:translateY(-14px); }
+.artwork-window { position:relative; overflow:hidden; background:white; }
+.website .artwork-window { border-radius:clamp(10px,1.5vw,22px); }
+.artwork-window img { position:absolute; max-width:none; border-radius:0; }
+@media(max-width:600px) { .artwork-mockup { padding:24px 16px; }.deck .mockup-items { gap:18px; padding:4px; }.website .mockup-items { gap:9px; }.website .mockup-object:nth-child(2) { transform:translateY(-8px); } }
+</style>

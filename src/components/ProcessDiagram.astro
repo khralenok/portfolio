@@ -1,0 +1,20 @@
+---
+import { renderMermaidSVG } from 'beautiful-mermaid';
+interface Props {
+  diagram: { title: string; code: string; caption: string; summary: { title: string; text: string }[] };
+}
+const { diagram } = Astro.props;
+const svg = renderMermaidSVG(diagram.code, {
+  bg: '#f4faf9', fg: '#121b33', line: '#2b4d73', accent: '#bc1529',
+  muted: '#2b4d73', surface: '#ffffff', border: '#7ec7c9',
+  font: 'Inter Variable', padding: 24, nodeSpacing: 32,
+});
+---
+<figure class="process-diagram">
+  <div class="diagram-heading"><span class="eyebrow">How it works</span><h3>{diagram.title}</h3></div>
+  <div class="diagram-desktop" aria-hidden="true" set:html={svg} />
+  <ol class="diagram-summary"><!-- Text remains accessible at every width; mobile uses it instead of shrinking the diagram. -->
+    {diagram.summary.map(item => <li><strong>{item.title}</strong><span>{item.text}</span></li>)}
+  </ol>
+  <figcaption>{diagram.caption}</figcaption>
+</figure>
