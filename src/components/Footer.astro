@@ -3,7 +3,7 @@ import { ArrowUpRight } from '@lucide/astro';
 import profile from '../data/profile.json';
 ---
 <footer class="site-footer" id="contact"><div class="wrap">
-  <a class="footer-title" href={`mailto:${profile.email}`}>Let’s work together.<ArrowUpRight size={64} aria-hidden="true" /></a>
+  <a class="footer-title" href={`mailto:${profile.email}`}>Let’s work together.</a>
   <div class="footer-profiles" aria-label="Find me elsewhere">{profile.profiles.map(({label, url}) => <a class="icon-link" href={url} target="_blank" rel="noopener noreferrer">{label}<ArrowUpRight size={16} aria-hidden="true" /></a>)}</div>
   <div class="footer-bottom"><a href={`mailto:${profile.email}`}>{profile.email}</a><span>{profile.location} · {profile.timezone}</span><span>© {new Date().getFullYear()} {profile.name}</span></div>
 </div></footer>

@@ -1,8 +1,10 @@
 ---
-import { ArrowUpRight, ArrowLeft, ArrowRight } from '@lucide/astro';
+import { ArrowUpRight, ArrowLeft } from '@lucide/astro';
 import Layout from '../layouts/Layout.astro';
 import ProjectImage from '../components/ProjectImage.astro';
 import ProcessDiagram from '../components/ProcessDiagram.astro';
+import InstagramGallery from '../components/InstagramGallery.astro';
+import ArtworkMockup from '../components/ArtworkMockup.astro';
 import projects from '../data/projects.json';
 export function getStaticPaths() { return projects.map(project => ({ params: { id: project.id }, props: { project } })); }
 const { project } = Astro.props;
@@ -17,11 +19,12 @@ const next = projects[(projects.findIndex(p => p.id === project.id) + 1) % proje
     {project.credit && <p class="image-credit">{project.credit}</p>}
     {project.metrics.length > 0 && <div class="metrics">{project.metrics.map(([value, label]) => <div><strong>{value}</strong><span>{label}</span></div>)}</div>}
     <div class="case-brief"><div><h2>The challenge</h2><p>{project.challenge}</p></div><div><h2>My contribution</h2><p>{project.contribution}</p></div></div>
+    {project.videos && <InstagramGallery videos={project.videos} />}
     <nav class="case-index" aria-label="Case study sections">{project.sections.map((section, i) => <a href={`#section-${i + 1}`}><span>{String(i + 1).padStart(2, '0')}</span>{section.title}</a>)}</nav>
     <div class="case-sections">{project.sections.map((section, i) => <section class="case-section" id={`section-${i + 1}`}>
       <div class="case-section-text"><div class="case-section-heading"><span class="eyebrow">{String(i + 1).padStart(2, '0')}</span><h2>{section.title}</h2></div><div>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></div>
       {section.diagram && <ProcessDiagram diagram={section.diagram} />}
-      {section.images && <div class:list={['case-gallery', section.galleryClass, { 'gallery-full': section.layout === 'full' }]}>{section.images.map(image => <figure><ProjectImage name={image.name} alt={image.alt} animated={image.animated} width={1400} /><figcaption>{image.caption}</figcaption></figure>)}</div>}
+      {section.images && <div class:list={['case-gallery', section.galleryClass, { 'gallery-full': section.layout === 'full' }]}>{section.images.map((image, imageIndex) => <figure>{image.mockup ? <ArtworkMockup kind={image.mockup} alt={image.alt} /> : <ProjectImage name={image.name} alt={image.alt} animated={image.animated} nativeLimit={true} width={1400} sizes={section.layout === 'full' || (section.images.length % 2 === 1 && imageIndex === section.images.length - 1) ? '(max-width:700px) calc(100vw - 40px), (max-width:1100px) calc(100vw - 64px), (max-width:1512px) calc(100vw - 112px), 1400px' : '(max-width:700px) calc(100vw - 40px), (max-width:1100px) calc((100vw - 84px) / 2), (max-width:1512px) calc((100vw - 132px) / 2), 690px'} />}<figcaption>{image.caption}</figcaption></figure>)}</div>}
     </section>)}</div>
     {project.relatedWork && <aside class="related-work"><span class="eyebrow">Related work</span><a class="icon-link" href={project.relatedWork.href} target="_blank" rel="noopener noreferrer"><h3>{project.relatedWork.title}</h3><ArrowUpRight size={20} aria-hidden="true" /></a><p>{project.relatedWork.description}</p></aside>}
     <a class="next-case" href={`/${next.id}/`}><span class="eyebrow">Next case / {next.client}</span><h2>{next.title} <ArrowUpRight size={20} aria-hidden="true" /></h2></a>

@@ -8,8 +8,7 @@
   "timezone": "UTC+7",
   "showreelId": "vOaKJkwBweA",
   "bio": [
-    "I’m Grigorii, a designer and creative lead with ten years of experience across brand, digital, and production.",
-    "I combine hands-on design with team leadership and workflow building—from the initial problem through final delivery."
+    "I’m Grigorii, a designer and creative lead with ten years of experience across brand, digital, and production. I combine hands-on design, team leadership, and workflow building to take creative work from idea to delivery."
   ],
   "profiles": [
     {
@@ -29,5 +28,25 @@
       "url": "https://github.com/khralenok"
     }
   ],
-  "substack": "https://khralenok.substack.com/"
+  "substack": "https://khralenok.substack.com/",
+  "personalArt": {
+    "title": "Personal explorations",
+    "description": "I explore image generation through digital art based on my sketches and concepts.",
+    "account": "khralenok",
+    "url": "https://www.instagram.com/khralenok/",
+    "posts": [
+      {
+        "url": "https://www.instagram.com/p/Dd_SoAFkyAk/",
+        "label": "View artwork on Instagram"
+      },
+      {
+        "url": "https://www.instagram.com/p/Dd06B0bEme2/",
+        "label": "View artwork on Instagram"
+      },
+      {
+        "url": "https://www.instagram.com/p/Ddxr9cwkvrT/",
+        "label": "View artwork on Instagram"
+      }
+    ]
+  }
 }

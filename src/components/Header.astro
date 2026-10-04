@@ -1,9 +1,8 @@
 ---
-import { ArrowUpRight } from '@lucide/astro';
 import profile from '../data/profile.json';
 ---
 <header class="site-header wrap">
   <a class="wordmark" href="/" aria-label={`${profile.name} home`}><img src="/khr-logo.svg" alt={profile.name} width="144" height="36" /></a>
   <nav aria-label="Main navigation"><a href="/#work">Work</a><a href="/#about">Approach</a><a href="/#writing">Writing</a></nav>
-  <a class="contact-link" href={`mailto:${profile.email}`} aria-label={`Email ${profile.name}`}><span>Let’s talk</span><ArrowUpRight size={18} aria-hidden="true" /></a>
+  <a class="contact-link" href={`mailto:${profile.email}`} aria-label={`Email ${profile.name}`}><span>Let’s talk</span></a>
 </header>

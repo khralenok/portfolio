@@ -1,49 +1,56 @@
 # Grigorii Khralenok — portfolio
 
-Static Astro website for `https://khralenok.com`, prepared for GitHub Pages.
+Static Astro portfolio for https://khralenok.com, published through GitHub Pages.
 
-## Run locally
+## Local development
 
-Use Node 24 (minimum 22.12).
+Use Node 24. Run commands from the repository root.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Production preview:
+For a production preview:
 
 ```sh
 npm run build
 npm test
-npm run preview
+npm run preview -- --host 127.0.0.1 --port 4322
 ```
 
-Run commands from this project root.
+Astro preview runs in the background. Use `npx astro preview status` or `npx astro preview stop` to manage it. Rebuild after edits and refresh the browser, or use `npm run dev` for automatic updates.
 
-## Edit the website
+## Editing
 
-- `src/data/profile.json`: positioning, public contact details, biography, and profile links.
-- `src/data/projects.json`: six cases, metrics, scope, image captions, and Mermaid diagram sources.
-- `src/content/writing/`: three selected articles.
-- `src/images/selected/`: referenced project imagery; Astro produces optimized variants.
-- `src/pages/`: homepage, case pages, writing pages, 404, and sitemap.
-- `src/components/`: header, footer, project cards, images, and process diagrams.
-- `src/styles/`: supplied palette and responsive styling.
-- `public/`: logo, favicon, workflow illustration, social cover, campaign animations, robots file, and CNAME.
-- `docs/content-notes.md`: claim context, creator attribution, asset provenance, and generated-cover prompts.
-- `docs/project-questions/README.md`: six project questionnaires for the next editorial pass, with space for candid answers.
+- `src/data/profile.json`: positioning, contact details, biography, and personal Instagram posts.
+- `src/data/projects.json`: six cases, gallery assets, credits, Instagram reels, and Mermaid sources.
+- `src/content/writing/`: published articles.
+- `src/images/selected/`: active project imagery, optimized by Astro at build time.
+- `src/components/`: shared navigation, gallery, artwork mockup, and process-diagram components.
+- `src/styles/`: palette, typography, and responsive layout.
+- `public/`: logo, favicon, personal illustration, social cover, campaign animations, robots, and CNAME.
 
-Fredoka and Inter are self-hosted. Icons use Lucide. Beautiful Mermaid renders diagrams during the build; mobile uses readable text cards. Campaign animations and the embedded YouTube showreel respect reduced-motion preferences.
+Fredoka and Inter are self-hosted. Icons use Lucide; Beautiful Mermaid renders diagrams at build time. Image variants include native resolutions with layout-specific sizing. Motion and the showreel respect reduced-motion preferences. Instagram embeds retain direct post links.
 
-## GitHub Pages
+The ignored local `docs/` folder contains your project answers and editorial notes. It is not required to build or deploy the website. Personal Instagram posts and UGC reels are stored in the website data files.
 
-The workflow in `.github/workflows/deploy.yml` builds this root project with Node 24 and deploys when `main` is pushed or the workflow is run manually. Set the repository's Pages build source to **GitHub Actions** and custom domain to **khralenok.com**. `public/CNAME` and `astro.config.mjs` already use that domain.
+## Release
 
-The workspace has no Git remote configured; no deployment has been performed.
+The workflow at `.github/workflows/deploy.yml` builds and validates pull requests targeting `main`. Pushes to `main` build, validate, and deploy `dist/` to GitHub Pages. Manual runs can deploy `main`; runs on other branches only build and upload an artifact.
 
-## Checks
+1. In repository **Settings → Pages**, choose **GitHub Actions** as the build source.
+2. Set the custom domain to **khralenok.com** and enable **Enforce HTTPS** when available.
+3. Commit the portfolio changes and merge `october-major-update` into `main`.
+4. Check the **Build and deploy portfolio** run in Actions.
 
-`npm test` validates built pages, local links, images, anchors, canonical URLs, custom domain, sitemap, and absence of draft placeholders. Run the build first.
+`astro.config.mjs` and `public/CNAME` already use the custom domain. Deployments use the `github-pages` environment; its branch rules must allow `main`. No custom token is required.
 
-Research archives, old portfolios, unused components, unused images, and rebuild scripts have been removed from this website project after a final source review. A verified recovery archive was created outside the project at `/private/tmp/portfolio-rebuild-sources-20261003.zip`; it is temporary and is not a website dependency.
+## Validation
+
+```sh
+npm run build
+npm test
+```
+
+The validation script checks generated pages, local links, images, anchors, headings, canonical URLs, the custom domain, sitemap, and draft placeholders. Build outputs, caches, dependencies, and local editorial notes are excluded from Git.

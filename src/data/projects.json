@@ -279,9 +279,9 @@
         ],
         "images": [
           {
-            "name": "recovered-zvuk-components.webp",
-            "caption": "Character components supported new compositions from an existing library.",
-            "alt": "Character components supported new compositions from an existing library."
+            "name": "zvuk-character-builder-v2.png",
+            "caption": "A character-builder visualization of the modular illustration library.",
+            "alt": "Character customization concept with interchangeable face, hair, and outfit modules beside an assembled Zvuk character"
           },
           {
             "name": "zvuk-original-visuals.webp",
@@ -303,16 +303,19 @@
         ],
         "images": [
           {
-            "name": "recovered-zvuk-pitchdecks.webp",
-            "caption": "Presentation examples show the illustration system alongside business information.",
-            "alt": "Presentation examples show the illustration system alongside business information."
+            "name": "zvuk-deck-panels-v3.png",
+            "alt": "Four Zvuk Business slide designs presenting atmosphere, smartphone control, sound quality, and advertising in a flat lavender mockup",
+            "caption": "Printed-slide mockup of the presentation designs.",
+            "mockup": "deck"
           },
           {
-            "name": "recovered-zvuk-website.webp",
-            "caption": "The visual vocabulary carried into the product website.",
-            "alt": "The visual vocabulary carried into the product website."
+            "name": "zvuk-website-sections-v3.png",
+            "alt": "Three Zvuk mobile landing-page sections showing the hero, music app features, and guidance for brand profiles",
+            "caption": "Mobile-screen mockup of the landing-page sections.",
+            "mockup": "website"
           }
-        ]
+        ],
+        "layout": "full"
       }
     ],
     "coverAlt": "Photographic presentation mockup of Zvuk Business illustration in a music shop",
@@ -389,13 +392,13 @@
         "images": [
           {
             "name": "brand-new-content-879011f5.jpg",
-            "caption": "Photography by Tolegen, produced under my art direction.",
-            "alt": "A mural photographed on a residential building by Tolegen"
+            "caption": "Photography by Tolegen Tolegenov",
+            "alt": "A mural photographed on a residential building by Tolegen Tolegenov"
           },
           {
             "name": "ugc-manat-portrait-edited.png",
-            "caption": "Photography by Manat (@manamontano).",
-            "alt": "Orange-lit portrait photographed by Manat"
+            "caption": "Photography by @manamontano.",
+            "alt": "Orange-lit portrait photographed by @manamontano"
           }
         ],
         "galleryClass": "matched-photos"
@@ -408,14 +411,32 @@
         ]
       }
     ],
-    "credit": "Photography by Salimkerey, Tolegen.",
+    "credit": "Photography by Salimkerey",
     "scope": [
       "Content strategy & art direction",
       "Creator production",
       "Budgets & regional coordination"
     ],
     "challenge": "Moving beyond a few initial shoots meant organizing device access, language requirements, creator capacity, and regional budgets. Production mistakes and unplanned revisions could quickly consume the agency’s margin.",
-    "contribution": "I planned content, wrote and directed briefs, sourced and onboarded creators, coordinated equipment and filming, and controlled quality and spending. Local creators often handled locations and casting; editing stayed with the creator or moved to a motion designer when needed."
+    "contribution": "I planned content, wrote and directed briefs, sourced and onboarded creators, coordinated equipment and filming, and controlled quality and spending. Local creators often handled locations and casting; editing stayed with the creator or moved to a motion designer when needed.",
+    "videos": [
+      {
+        "url": "https://www.instagram.com/reel/C2RsLdJiAG2/",
+        "label": "Published reel 1 · iOfficial Kazakhstan"
+      },
+      {
+        "url": "https://www.instagram.com/reel/C2HnLOLCyoE/",
+        "label": "Published reel 2 · iOfficial Kazakhstan"
+      },
+      {
+        "url": "https://www.instagram.com/reel/CxH-C_kMIpt/",
+        "label": "Published reel 3 · iOfficial Kazakhstan"
+      },
+      {
+        "url": "https://www.instagram.com/reel/CynThqIr0ou/",
+        "label": "Published reel 4 · iOfficial Kazakhstan"
+      }
+    ]
   },
   {
     "id": "cryptonix-sales",

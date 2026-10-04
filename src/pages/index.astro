@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ProjectImage from '../components/ProjectImage.astro';
-import { ArrowDownRight, ArrowUpRight } from '@lucide/astro';
+import InstagramGallery from '../components/InstagramGallery.astro';
+import { ArrowUpRight } from '@lucide/astro';
 import projects from '../data/projects.json';
 import profile from '../data/profile.json';
 import { getCollection } from 'astro:content';
@@ -14,9 +15,9 @@ const featured = ['cryptonix', 'incentive-performance', 'zvuk', 'incentive-ugc',
   <section class="hero wrap">
     <div class="hero-body">
       <div class="hero-copy">
-        <h1>Brand design.<br />Creative direction.<br />CreativeOps.</h1>
+        <h1>Brand design.<br />Art direction.<br />CreativeOps.</h1>
         <p class="hero-description">I build brands and the systems that help teams deliver them.</p>
-        <a class="pill" href="#work">Selected work <ArrowDownRight size={18} aria-hidden="true" /></a>
+        <a class="pill" href="#work">Selected work</a>
       </div>
       <div class="showreel">
         <div class="showreel-player"><ProjectImage name="cryptonix-stand-cd386391.webp" alt="" eager={true} /><iframe id="showreel" title="Grigorii Khralenok — design showreel" src={showreelUrl} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
@@ -28,15 +29,17 @@ const featured = ['cryptonix', 'incentive-performance', 'zvuk', 'incentive-ugc',
     <div class="project-grid">{featured.map((project, i) => <ProjectCard project={project} number={i + 1} />)}</div>
   </section>
   <section id="about" class="about-section"><div class="wrap">
-    <div class="section-heading"><h2>Direction, design, delivery.</h2></div>
-    <div class="approach-overview"><img class="workflow-illustration" src="/workflow-illustration.svg" alt="Illustration of a creative production workflow" width="320" height="320" loading="lazy" /><div class="about-intro">{profile.bio.map(paragraph => <p>{paragraph}</p>)}</div></div>
-    <div class="capabilities">
-      <div><h3>Creative direction</h3><p>Concept development, art direction, and team leadership.</p></div>
-      <div><h3>Brand & digital</h3><p>Visual systems, websites, illustration, motion, and campaigns.</p></div>
-      <div><h3>CreativeOps</h3><p>Templates, components, production workflows, and practical automation.</p></div>
-    </div>
-    <div class="experience"><span class="eyebrow">Experience</span><div><span>Cryptonix</span><span>Brand design & CreativeOps</span><span>2024–2026</span></div><div><span>Incentive Agency</span><span>Creative direction & design leadership</span><span>2023–2024</span></div><div><span>Zvuk Business</span><span>Brand design & illustration</span><span>2020–2023</span></div></div>
+    <div class="approach-layout"><div class="approach-copy">
+      <h2>Direction, design, delivery.</h2>
+      <div class="about-intro">{profile.bio.map(paragraph => <p>{paragraph}</p>)}</div>
+      <div class="capabilities">
+        <div><h3>Creative direction</h3><p>Concept development, art direction, and team leadership.</p></div>
+        <div><h3>Brand & digital</h3><p>Visual systems, websites, illustration, motion, and campaigns.</p></div>
+        <div><h3>CreativeOps</h3><p>Templates, components, production workflows, and practical automation.</p></div>
+      </div>
+    </div><img class="workflow-illustration" src="/character.png" alt="Illustration of a creative production workflow" width="440" height="440" loading="lazy" /></div>
   </div></section>
+  <div class="personal-art-section wrap"><InstagramGallery id="personal-art" title={profile.personalArt.title} description={profile.personalArt.description} account={profile.personalArt.account} profileUrl={profile.personalArt.url} videos={profile.personalArt.posts} /></div>
   <section id="writing" class="writing-section wrap">
     <div class="section-heading"><h2>Writing</h2><a class="icon-link" href={profile.substack} target="_blank" rel="noopener noreferrer">Substack <ArrowUpRight size={18} aria-hidden="true" /></a></div>
     <div class="writing-list">{writing.map(article => <a href={`/writing/${article.id}/`}><h3>{article.data.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></a>)}</div>
