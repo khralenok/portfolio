@@ -6,8 +6,6 @@ import InstagramGallery from '../components/InstagramGallery.astro';
 import { ArrowUpRight } from '@lucide/astro';
 import projects from '../data/projects.json';
 import profile from '../data/profile.json';
-import { getCollection } from 'astro:content';
-const writing = await getCollection('writing');
 const showreelUrl = `https://www.youtube.com/embed/${profile.showreelId}?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=${profile.showreelId}&playsinline=1`;
 const featured = ['cryptonix', 'incentive-performance', 'zvuk', 'incentive-ugc', 'cryptonix-sales', 'crowd-control'].map(id => projects.find(p => p.id === id)!);
 ---
@@ -42,7 +40,7 @@ const featured = ['cryptonix', 'incentive-performance', 'zvuk', 'incentive-ugc',
   <div class="personal-art-section wrap"><InstagramGallery id="personal-art" title={profile.personalArt.title} description={profile.personalArt.description} account={profile.personalArt.account} profileUrl={profile.personalArt.url} videos={profile.personalArt.posts} /></div>
   <section id="writing" class="writing-section wrap">
     <div class="section-heading"><h2>Writing</h2><a class="icon-link" href={profile.substack} target="_blank" rel="noopener noreferrer">Substack <ArrowUpRight size={18} aria-hidden="true" /></a></div>
-    <div class="writing-list">{writing.map(article => <a href={`/writing/${article.id}/`}><h3>{article.data.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></a>)}</div>
+    <div class="writing-list">{profile.writing.map(article => <a href={article.url} target="_blank" rel="noopener noreferrer"><h3>{article.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></a>)}</div>
   </section>
   <script>
     const video = document.querySelector<HTMLIFrameElement>('#showreel');

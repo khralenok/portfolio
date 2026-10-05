@@ -23,9 +23,8 @@ Astro preview runs in the background. Use `npx astro preview status` or `npx ast
 
 ## Editing
 
-- `src/data/profile.json`: positioning, contact details, biography, and personal Instagram posts.
+- `src/data/profile.json`: positioning, contact details, biography, personal Instagram posts, and external Substack article links.
 - `src/data/projects.json`: six cases, gallery assets, credits, Instagram reels, and Mermaid sources.
-- `src/content/writing/`: published articles.
 - `src/images/selected/`: active project imagery, optimized by Astro at build time.
 - `src/components/`: shared navigation, gallery, artwork mockup, and process-diagram components.
 - `src/styles/`: palette, typography, and responsive layout.
