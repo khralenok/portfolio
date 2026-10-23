@@ -1,0 +1,78 @@
+---
+import IllustrationCaseLayout from '../layouts/IllustrationCaseLayout.astro';
+import IllustrationProcessCollection from '../components/IllustrationProcessCollection.astro';
+import IllustrationGallery from '../components/IllustrationGallery.astro';
+import type { ProcessArtwork } from '../components/IllustrationProcessCollection.astro';
+import type { IllustrationImage } from '../components/illustration/images';
+
+import artwork0Mockup from '../images/winshark-retention-email/for-process/supercharge-mockup.png';
+import artwork0Final from '../images/winshark-retention-email/for-process/supercharge-final.png';
+import artwork0Sketch from '../images/winshark-retention-email/for-process/supercharge-sketch.png';
+import artwork1Mockup from '../images/winshark-retention-email/for-process/break-free-mockup.png';
+import artwork1Final from '../images/winshark-retention-email/for-process/break-free-final.png';
+import artwork1Sketch from '../images/winshark-retention-email/for-process/break-free-sketch.png';
+import artwork2Mockup from '../images/winshark-retention-email/for-process/your-next-move-mockup.png';
+import artwork2Final from '../images/winshark-retention-email/for-process/your-next-move-final.png';
+import artwork2Sketch from '../images/winshark-retention-email/for-process/your-next-move-sketch.png';
+import banner0 from '../images/winshark-retention-email/for-gallery/shark-1-big-fin-energy.png';
+import banner1 from '../images/winshark-retention-email/for-gallery/shark-3-make-a-splash.png';
+import banner2 from '../images/winshark-retention-email/for-gallery/shark-4-level-up.png';
+import banner3 from '../images/winshark-retention-email/for-gallery/shark-5-bonus-power.png';
+import banner4 from '../images/winshark-retention-email/for-gallery/shark-6-bonus-magnet.png';
+import banner5 from '../images/winshark-retention-email/for-gallery/shark-7-double-the-love-v2.png';
+import banner6 from '../images/winshark-retention-email/for-gallery/shark-8-royal-treat.png';
+import banner7 from '../images/winshark-retention-email/for-gallery/shark-9-spin-up-a-storm.png';
+import banner8 from '../images/winshark-retention-email/for-gallery/shark-11-spooky-spins.png';
+import banner9 from '../images/winshark-retention-email/for-gallery/shark-13-wake-up-and-splash.png';
+
+const description = "Thirteen illustrated email banners for Winshark, built around a shark character in a series of playful scenarios. Bold lettering, underwater settings, and electric blue effects connect the collection across seasonal and promotional themes.";
+const artworks: ProcessArtwork[] = [
+  {
+    title: "Supercharge",
+    mockup: { src: artwork0Mockup, alt: "Email application mockup of the Winshark “Supercharge” banner" },
+    final: { src: artwork0Final, alt: "A shark beside an electrically charged machine, with “Supercharge! 200% bonus” lettering" },
+    sketch: { src: artwork0Sketch, alt: "Constructive sketch for the Winshark “Supercharge” banner" },
+  },
+  {
+    title: "Break free",
+    mockup: { src: artwork1Mockup, alt: "Email application mockup of the Winshark “Break free” banner" },
+    final: { src: artwork1Final, alt: "A shark breaking through chains, with “Break free! 50 free spins” lettering" },
+    sketch: { src: artwork1Sketch, alt: "Constructive sketch for the Winshark “Break free” banner" },
+  },
+  {
+    title: "Your next move",
+    mockup: { src: artwork2Mockup, alt: "Email application mockup of the Winshark “Your next move” banner" },
+    final: { src: artwork2Final, alt: "A shark at a card table, with “Your next move! 50% reload bonus” lettering" },
+    sketch: { src: artwork2Sketch, alt: "Constructive sketch for the Winshark “Your next move” banner" },
+  },
+];
+const gallery: IllustrationImage[] = [
+  { src: banner0, alt: "A shark in sunglasses and a dark jacket, with “Big fin energy! 100 free spins” lettering", caption: "Big fin energy" },
+  { src: banner1, alt: "A shark holding a bag of coins, with “Make a splash! 100% bonus” lettering", caption: "Make a splash" },
+  { src: banner2, alt: "A flexing shark, with “Level up! 150% boost” lettering", caption: "Level up" },
+  { src: banner3, alt: "A muscular shark flexing its arms, with “Bonus power! 100 free spins” lettering", caption: "Bonus power" },
+  { src: banner4, alt: "A shark holding a horseshoe magnet attracting coins, with “Bonus magnet! 100% match bonus” lettering", caption: "Bonus magnet" },
+  { src: banner5, alt: "A shark and an orange cat holding a heart, with “Double the love! 50 free spins each” lettering", caption: "Double the love" },
+  { src: banner6, alt: "A crowned shark seated beside a treasure chest, with “The royal treat! 200 free spins” lettering", caption: "The royal treat" },
+  { src: banner7, alt: "A shark beside a slot machine and a pile of coins, with “Spin up a storm! 100 free spins” lettering", caption: "Spin up a storm" },
+  { src: banner8, alt: "A shark dressed as a witch riding a broom among ghosts, with “Spooky spins! 100 free spins” lettering", caption: "Spooky spins" },
+  { src: banner9, alt: "A shark in a bathrobe holding a coffee cup, with “Wake up & splash! 50 free spins” lettering", caption: "Wake up and splash" },
+];
+---
+<IllustrationCaseLayout title="Winshark newsletter illustrations" description={description} eyebrow="Winshark / Newsletter illustration / 13 artworks">
+  <IllustrationProcessCollection artworks={artworks} label="Winshark newsletter illustration processes" />
+
+  <section aria-labelledby="gallery-heading">
+    <div class="section-intro">
+      <h2 id="gallery-heading">The rest of the collection</h2>
+      <p>Ten more illustrated banners. Open any image to see the full composition.</p>
+    </div>
+    <IllustrationGallery images={gallery} label="Winshark newsletter illustration collection" thumbnailPosition="left center" />
+  </section>
+</IllustrationCaseLayout>
+<style>
+  .section-intro { margin-bottom:32px; max-width:62ch; }
+  h2 { font-size:var(--type-h2); margin-bottom:16px; }
+  .section-intro p { color:var(--muted); }
+  @media(max-width:700px) { h2 { font-size:calc(var(--type-body) * 1.777778); } }
+</style>

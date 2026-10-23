@@ -1,0 +1,102 @@
+---
+import IllustrationProcess from './IllustrationProcess.astro';
+import { imageSource } from './illustration/images';
+import type { IllustrationImage } from './illustration/images';
+
+export interface ProcessArtwork {
+  title: string;
+  final: IllustrationImage;
+  sketch: IllustrationImage;
+  mockup: IllustrationImage;
+}
+export interface Props {
+  artworks: ProcessArtwork[];
+  label?: string;
+  aspectRatio?: string;
+  fit?: 'contain' | 'cover';
+}
+const { artworks, label = 'Illustration processes', aspectRatio = '1 / 1', fit = 'contain' } = Astro.props;
+if (!artworks.length) throw new Error('IllustrationProcessCollection requires at least one artwork.');
+const items = await Promise.all(artworks.map(async artwork => ({
+  title: artwork.title,
+  thumbnail: await imageSource(artwork.final.thumbnail ?? artwork.final.src, 160),
+  stages: await Promise.all([artwork.mockup, artwork.final, artwork.sketch].map(async image => ({
+    source: await imageSource(image.src, 1600), alt: image.alt, caption: image.caption,
+  }))),
+})));
+const id = `process-collection-${crypto.randomUUID()}`;
+---
+<illustration-process-collection role="region" aria-roledescription="carousel" aria-label={label} data-items={JSON.stringify(items)}>
+  <div class="heading">
+    <div class="current" aria-live="polite" aria-atomic="true">
+      <h3 data-title>{items[0].title}</h3>
+    </div>
+
+  </div>
+  <div class="viewer" id={id} data-captions={String(items.some(item => item.stages.some(stage => stage.caption)))}>
+    <IllustrationProcess final={artworks[0].final} sketch={artworks[0].sketch} mockup={artworks[0].mockup}
+      label={`${label}: stages`} aspectRatio={aspectRatio} fit={fit} swipeNavigation={false} />
+  </div>
+  <div class="artwork-picker" role="group" aria-label="Select artwork">
+    {items.map((item, i) => <button type="button" class="thumbnail" aria-label={`Artwork ${i + 1}: ${item.title}`} aria-pressed={String(i === 0)} aria-controls={id} data-artwork={i}>
+      <img {...item.thumbnail} alt="" loading="lazy" decoding="async" draggable="false" />
+    </button>)}
+  </div>
+</illustration-process-collection>
+<script>
+  import { attachSwipe } from './illustration/swipe';
+  import type { PreparedIllustrationImage } from './illustration/images';
+  class IllustrationProcessCollection extends HTMLElement {
+    private cleanup?: AbortController;
+    connectedCallback() {
+      this.cleanup?.abort();
+      const controller = this.cleanup = new AbortController();
+      const options = { signal: controller.signal };
+      const items: { title: string; stages: PreparedIllustrationImage[] }[] = JSON.parse(this.dataset.items!);
+      const viewer = this.querySelector('illustration-process')!;
+      const thumbnails = Array.from(this.querySelectorAll<HTMLButtonElement>('[data-artwork]'));
+      let selected = 0;
+      const select = (index: number) => {
+        const position = Math.max(0, Math.min(items.length - 1, index));
+        if (position === selected) return;
+        selected = position;
+        this.querySelector('[data-title]')!.textContent = items[selected].title;
+        thumbnails.forEach((button, i) => button.setAttribute('aria-pressed', String(i === selected)));
+        viewer.dispatchEvent(new CustomEvent('illustration-images', { detail: items[selected].stages }));
+      };
+      thumbnails.forEach((button, i) => button.addEventListener('click', () => select(i), options));
+      this.addEventListener('keydown', event => {
+        const target = event.target as HTMLElement;
+        if (!target.closest('.artwork-picker')) return;
+        const index = event.key === 'ArrowRight' ? selected + 1 : event.key === 'ArrowLeft' ? selected - 1 : event.key === 'Home' ? 0 : event.key === 'End' ? items.length - 1 : null;
+        if (index === null) return;
+        event.preventDefault();
+        select(index);
+        if (target.closest('.artwork-picker')) thumbnails[selected].focus();
+      }, options);
+      attachSwipe(this.querySelector('.viewer .viewport')!, delta => select(selected + delta), controller.signal);
+    }
+    disconnectedCallback() { this.cleanup?.abort(); }
+  }
+  if (!customElements.get('illustration-process-collection')) customElements.define('illustration-process-collection', IllustrationProcessCollection);
+</script>
+<style>
+  illustration-process-collection { display:block; min-width:0; padding:clamp(16px,3vw,40px); background:color-mix(in srgb,var(--accent) 24%,var(--paper)); border:1px solid var(--line); border-radius:5px; --process-image-height:clamp(300px,48vw,560px); }
+  .heading { text-align:center; margin-bottom:24px; }
+  .current { min-width:0; }
+  h3 { font-size:calc(var(--type-body) * 1.777778); line-height:1.25; min-height:2.5em; }
+  button { min-width:44px; min-height:44px; color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:3px; font:inherit; cursor:pointer; }
+  button:hover { border-color:var(--ink); }
+  button:focus-visible { outline:3px solid var(--color-red); outline-offset:3px; }
+  .viewer { margin-bottom:24px; }
+  .viewer[data-captions=false] :global(figcaption) { display:none; }
+  .artwork-picker { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; padding:6px; margin:-6px; }
+  .thumbnail { flex:0 0 72px; padding:4px; aspect-ratio:1; }
+  .thumbnail[aria-pressed=true] { border:2px solid var(--ink); background:var(--accent); }
+  .thumbnail img { width:100%; height:100%; object-fit:contain; }
+  @media(max-width:700px) {
+    illustration-process-collection { --process-image-height:auto; }
+    h3 { font-size:var(--type-h3); min-height:2.5em; }
+    .thumbnail { flex-basis:64px; }
+  }
+</style>

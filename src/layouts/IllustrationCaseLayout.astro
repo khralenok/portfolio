@@ -1,0 +1,48 @@
+---
+import { ArrowLeft, ArrowUpRight } from '@lucide/astro';
+import Layout from './Layout.astro';
+import profile from '../data/profile.json';
+import { assetPath } from '../components/illustration/images';
+
+export interface Props {
+  title: string;
+  description: string;
+  eyebrow?: string;
+}
+const { title, description, eyebrow = 'Illustration pack' } = Astro.props;
+---
+<Layout title={`${title} — Grigorii Khralenok`} description={description}>
+  <article class="illustration-case wrap">
+    <a class="back-link" href={`${assetPath('/')}#work`}><ArrowLeft size={16} aria-hidden="true" /> All work</a>
+    <header class="pack-heading">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="pack-description">{description}</p>
+      <slot name="intro" />
+    </header>
+    <div class="pack-content"><slot /></div>
+    <slot name="cta">
+      <section class="pack-cta" aria-labelledby="pack-cta-title">
+        <h2 id="pack-cta-title">Have an illustration project in mind?</h2>
+        <p>Let’s make something with character.</p>
+        <a class="pill" href={`mailto:${profile.email}`}>Let’s talk <ArrowUpRight size={18} aria-hidden="true" /></a>
+      </section>
+    </slot>
+  </article>
+</Layout>
+<style>
+  .illustration-case { padding-block:32px 80px; }
+  .pack-heading { padding-block:40px 56px; max-width:900px; }
+  h1 { font-size:var(--type-h1); line-height:1.1; margin-block:16px 24px; }
+  .pack-description { max-width:62ch; color:var(--muted); font-size:var(--type-body); }
+  .pack-content { display:grid; gap:clamp(48px,6vw,88px); }
+  .pack-cta { margin-top:clamp(56px,7vw,100px); padding-top:40px; border-top:1px solid var(--line); }
+  h2 { font-size:var(--type-h2); max-width:22ch; margin-bottom:16px; }
+  .pack-cta p { color:var(--muted); }
+  .pill { gap:16px; }
+  @media(max-width:700px) {
+    .pack-heading { padding-block:28px 40px; }
+    h1 { font-size:calc(var(--type-body) * 2.37037); }
+    h2 { font-size:calc(var(--type-body) * 1.777778); }
+  }
+</style>

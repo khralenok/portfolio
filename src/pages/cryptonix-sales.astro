@@ -1,0 +1,75 @@
+---
+import IllustrationCaseLayout from '../layouts/IllustrationCaseLayout.astro';
+import IllustrationProcessCollection from '../components/IllustrationProcessCollection.astro';
+import IllustrationGallery from '../components/IllustrationGallery.astro';
+import type { IllustrationImage } from '../components/illustration/images';
+
+import sticker1Final from '../images/cryptonix-sticker/for-process/sticker-1-final.png';
+import sticker1Sketch from '../images/cryptonix-sticker/for-process/sticker-1-sketch.png';
+import sticker1Mockup from '../images/cryptonix-sticker/for-process/sticker-1-mockup.png';
+import sticker3Final from '../images/cryptonix-sticker/for-process/sticker-3-final.png';
+import sticker3Sketch from '../images/cryptonix-sticker/for-process/sticker-3-sketch.png';
+import sticker3Mockup from '../images/cryptonix-sticker/for-process/sticker-3-mockup.png';
+import sticker6Final from '../images/cryptonix-sticker/for-process/sticker-6-final.png';
+import sticker6Sketch from '../images/cryptonix-sticker/for-process/sticker-6-sketch.png';
+import sticker6Mockup from '../images/cryptonix-sticker/for-process/sticker-6-mockup.png';
+import sticker2 from '../images/cryptonix-sticker/for-gallery/sticker-2.png';
+import sticker4 from '../images/cryptonix-sticker/for-gallery/sticker-4.png';
+import sticker5 from '../images/cryptonix-sticker/for-gallery/sticker-5.png';
+import sticker7 from '../images/cryptonix-sticker/for-gallery/sticker-7.png';
+import sticker8 from '../images/cryptonix-sticker/for-gallery/sticker-8.png';
+import sticker9 from '../images/cryptonix-sticker/for-gallery/sticker-9.png';
+import sticker10 from '../images/cryptonix-sticker/for-gallery/sticker-10.png';
+import sticker11 from '../images/cryptonix-sticker/for-gallery/sticker-11.png';
+import sticker12 from '../images/cryptonix-sticker/for-gallery/sticker-12.png';
+
+// Edit the brief and artwork selections directly in this page; no case-body JSON.
+const description = 'A collection of twelve crypto-themed stickers for Cryptonix, pairing expressive characters with playful lettering. Explore three artworks from sketch to application, then browse the rest of the pack.';
+const gallery: IllustrationImage[] = [
+  { src: sticker2, alt: 'One-eyed orange character shrugging beneath “What the crypto” lettering' },
+  { src: sticker4, alt: 'Hand holding a gold coin surrounded by leaves, with “In crypto we trust” lettering' },
+  { src: sticker5, alt: 'Hands presenting a gold coin in a ring box, with “Say yes to crypto” lettering' },
+  { src: sticker7, alt: 'Pixel-style orange dinosaur guarding a coin, with “Don’t touch my crypto” lettering' },
+  { src: sticker8, alt: 'Character in sunglasses holding a Bitcoin coin, with “Crypto for every taste” lettering' },
+  { src: sticker9, alt: 'Muscular orange dog lifting a barbell, with “Mass crypto payments” lettering' },
+  { src: sticker10, alt: 'Orange poodle barking beside a blue 6–7 burst, with “When will crypto hit” lettering' },
+  { src: sticker11, alt: 'Friendly translucent orange character holding a coin, with “Transparent payments” lettering' },
+  { src: sticker12, alt: 'Orange bulldog surrounded by cryptocurrency coins, with “I’m the one and only crypto partner” lettering' },
+];
+---
+<IllustrationCaseLayout title="Cryptonix sticker pack" description={description} eyebrow="Cryptonix / Illustration / 12 stickers">
+    <IllustrationProcessCollection label="Cryptonix sticker processes" artworks={[
+      {
+        title: 'Keep calm and take my crypto',
+        final: { src: sticker1Final, alt: 'Orange dog holding a coin beneath “Keep calm and take my crypto” lettering' },
+        sketch: { src: sticker1Sketch, alt: 'Constructive sketch of the dog, coin, and “Keep calm and take my crypto” lettering' },
+        mockup: { src: sticker1Mockup, alt: 'Mockup of the dog and coin sticker on a silver laptop in a café' },
+      },
+      {
+        title: 'Sorry kid, I’m out of crypto',
+        final: { src: sticker3Final, alt: 'Adult dinosaur holding banknotes beside a small dinosaur asking for pizza, with “Sorry kid, I’m out of crypto” lettering' },
+        sketch: { src: sticker3Sketch, alt: 'Constructive sketch of the two dinosaurs and “Sorry kid, I’m out of crypto” lettering' },
+        mockup: { src: sticker3Mockup, alt: 'Applied mockup of the two-dinosaur crypto sticker' },
+      },
+      {
+        title: 'Purr-cessing your payment',
+        final: { src: sticker6Final, alt: 'Orange cat sleeping on a Cryptonix laptop, with “Purr-cessing your payment” lettering' },
+        sketch: { src: sticker6Sketch, alt: 'Constructive sketch of a sleeping cat on a laptop and “Purr-cessing your payment” lettering' },
+        mockup: { src: sticker6Mockup, alt: 'Applied mockup of the sleeping cat payment sticker' },
+      },
+    ]} />
+
+  <section aria-labelledby="gallery-heading">
+    <div class="section-intro">
+      <h2 id="gallery-heading">The rest of the pack</h2>
+      <p>Nine more stickers. Open any image for a closer look.</p>
+    </div>
+    <IllustrationGallery images={gallery} label="Cryptonix sticker collection" />
+  </section>
+</IllustrationCaseLayout>
+<style>
+  .section-intro { margin-bottom:32px; max-width:62ch; }
+  h2 { font-size:var(--type-h2); margin-bottom:16px; }
+  .section-intro p { color:var(--muted); }
+  @media(max-width:700px) { h2 { font-size:calc(var(--type-body) * 1.777778); } }
+</style>

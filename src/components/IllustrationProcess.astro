@@ -1,0 +1,77 @@
+---
+import type { IllustrationImage } from './illustration/images';
+import { imageSource } from './illustration/images';
+export interface Props {
+  final: IllustrationImage;
+  sketch: IllustrationImage;
+  mockup: IllustrationImage;
+  aspectRatio?: string;
+  fit?: 'contain' | 'cover';
+  label?: string;
+  /** Collection viewers handle swipes between artworks instead. */
+  swipeNavigation?: boolean;
+}
+const { final, sketch, mockup, aspectRatio = '4 / 3', fit = 'contain', label = 'Illustration process', swipeNavigation = true } = Astro.props;
+const stages = await Promise.all([mockup, final, sketch].map(async image => ({ ...image, source: await imageSource(image.src, 1600) })));
+const id = `process-${crypto.randomUUID()}`;
+---
+<illustration-process data-swipe={String(swipeNavigation)} style={`--ratio:${aspectRatio};--fit:${fit}`}>
+  <div role="tablist" aria-label={label}>
+    {['Mockup', 'Final', 'Sketch'].map((name, i) => <button type="button" role="tab" id={`${id}-tab-${i}`} aria-controls={`${id}-panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{name}</button>)}
+  </div>
+  <div class="viewport">
+    {stages.map((image, i) => <figure role="tabpanel" id={`${id}-panel-${i}`} aria-labelledby={`${id}-tab-${i}`} tabindex="0" hidden={i !== 0}>
+      <img {...image.source} alt={image.alt} loading="lazy" decoding="async" draggable="false" />
+      <figcaption>{image.caption || '\u00a0'}</figcaption>
+    </figure>)}
+  </div>
+</illustration-process>
+<script>
+  import { attachSwipe } from './illustration/swipe';
+  class IllustrationProcess extends HTMLElement {
+    private cleanup?: AbortController;
+    connectedCallback() {
+      this.cleanup?.abort();
+      const controller = this.cleanup = new AbortController();
+      const tabs = Array.from(this.querySelectorAll<HTMLButtonElement>('[role=tab]'));
+      const panels = Array.from(this.querySelectorAll<HTMLElement>('[role=tabpanel]'));
+      let selected = 0;
+      const select = (index: number, focus = false) => {
+        selected = Math.max(0, Math.min(tabs.length - 1, index));
+        tabs.forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === selected)); tab.tabIndex = i === selected ? 0 : -1; panels[i].hidden = i !== selected; });
+        if (focus || panels.some(panel => panel.contains(document.activeElement))) tabs[selected].focus();
+      };
+      tabs.forEach((tab, i) => tab.addEventListener('click', () => select(i), { signal: controller.signal }));
+      this.addEventListener('keydown', event => {
+        const index = event.key === 'ArrowRight' ? selected + 1 : event.key === 'ArrowLeft' ? selected - 1 : event.key === 'Home' ? 0 : event.key === 'End' ? 2 : null;
+        if (index !== null) { event.preventDefault(); select(index, true); }
+      }, { signal: controller.signal });
+      this.addEventListener('illustration-images', event => {
+        const images = (event as CustomEvent<import('./illustration/images').PreparedIllustrationImage[]>).detail;
+        panels.forEach((panel, i) => {
+          const image = panel.querySelector('img')!;
+          image.src = images[i].source.src;
+          image.alt = images[i].alt;
+          panel.querySelector('figcaption')!.textContent = images[i].caption || '\u00a0';
+        });
+      }, { signal: controller.signal });
+      if (this.dataset.swipe !== 'false') attachSwipe(this.querySelector('.viewport')!, delta => select(selected + delta), controller.signal);
+    }
+    disconnectedCallback() { this.cleanup?.abort(); }
+  }
+  if (!customElements.get('illustration-process')) customElements.define('illustration-process', IllustrationProcess);
+</script>
+<style>
+  illustration-process { display:block; min-width:0; }
+  [role=tablist] { display:flex; justify-content:center; gap:8px; margin-bottom:12px; }
+  button { font:inherit; font-size:var(--type-small); color:var(--ink); border:1px solid var(--line); background:var(--paper); border-radius:30px; min-height:44px; padding:8px 20px; cursor:pointer; }
+  button[aria-selected=true] { background:var(--accent); border-color:var(--ink); }
+  button:focus-visible,figure:focus-visible { outline:3px solid var(--color-red); outline-offset:3px; }
+  figure { margin:0; }
+  figure[hidden] { display:none; }
+  img { width:100%; height:var(--process-image-height,auto); aspect-ratio:var(--ratio); object-fit:var(--fit); background:var(--paper); border-radius:3px; animation:appear .18s ease; }
+  .viewport { touch-action:pan-y; }
+  figcaption { text-align:center; height:4.5em; overflow:auto; padding-top:12px; color:var(--muted); font-size:var(--type-small); line-height:1.5; }
+  @keyframes appear { from { opacity:.6; } to { opacity:1; } }
+  @media(prefers-reduced-motion:reduce) { img { animation:none; } }
+</style>

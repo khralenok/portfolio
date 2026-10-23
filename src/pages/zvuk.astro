@@ -1,0 +1,88 @@
+---
+import IllustrationCaseLayout from '../layouts/IllustrationCaseLayout.astro';
+import IllustrationProcessCollection from '../components/IllustrationProcessCollection.astro';
+import IllustrationGallery from '../components/IllustrationGallery.astro';
+import type { ProcessArtwork } from '../components/IllustrationProcessCollection.astro';
+import type { IllustrationImage } from '../components/illustration/images';
+
+import artwork0Mockup from '../images/zvuk-social-media/for-process/5-ways-for-store-to-sound-better-mockup.png';
+import artwork0Final from '../images/zvuk-social-media/for-process/5-ways-for-store-to-sound-better-final.png';
+import artwork0Sketch from '../images/zvuk-social-media/for-process/5-ways-for-store-to-sound-better-sketch.png';
+import artwork1Mockup from '../images/zvuk-social-media/for-process/3-things-about-background-music-mockup.png';
+import artwork1Final from '../images/zvuk-social-media/for-process/3-things-about-background-music-final.png';
+import artwork1Sketch from '../images/zvuk-social-media/for-process/3-things-about-background-music-sketch.png';
+import artwork2Mockup from '../images/zvuk-social-media/for-process/the-right-sound-for-your-pharmacy-mockup.png';
+import artwork2Final from '../images/zvuk-social-media/for-process/the-right-sound-for-your-pharmacy-final.png';
+import artwork2Sketch from '../images/zvuk-social-media/for-process/the-right-sound-for-your-pharmacy-sketch.png';
+import cover1 from '../images/zvuk-social-media/for-gallery/zvuk-cover-01.png';
+import cover2 from '../images/zvuk-social-media/for-gallery/zvuk-cover-02.png';
+import cover3 from '../images/zvuk-social-media/for-gallery/zvuk-cover-03.png';
+import cover4 from '../images/zvuk-social-media/for-gallery/zvuk-cover-04.png';
+import cover5 from '../images/zvuk-social-media/for-gallery/zvuk-cover-05.png';
+import cover6 from '../images/zvuk-social-media/for-gallery/zvuk-cover-06.png';
+import cover7 from '../images/zvuk-social-media/for-gallery/zvuk-cover-07.png';
+import cover8 from '../images/zvuk-social-media/for-gallery/zvuk-cover-08.png';
+import cover12 from '../images/zvuk-social-media/for-gallery/zvuk-cover-12.png';
+import cover13 from '../images/zvuk-social-media/for-gallery/zvuk-cover-13.png';
+import cover14 from '../images/zvuk-social-media/for-gallery/zvuk-cover-14.png';
+import cover15 from '../images/zvuk-social-media/for-gallery/zvuk-cover-15.png';
+import cover16 from '../images/zvuk-social-media/for-gallery/zvuk-cover-16.png';
+import cover17 from '../images/zvuk-social-media/for-gallery/zvuk-cover-17.png';
+import cover18 from '../images/zvuk-social-media/for-gallery/zvuk-cover-18.png';
+
+const description = "Eighteen illustrated social media covers for Zvuk, bringing background music and audio marketing to life through expressive characters, bold headlines, and a shared visual language.";
+const artworks: ProcessArtwork[] = [
+  {
+    title: "5 ways to make your store sound better",
+    mockup: { src: artwork0Mockup, alt: "Social media mockup of “5 ways to make your store sound better”" },
+    final: { src: artwork0Final, alt: "Two shoppers playing brass instruments among store displays, with the headline “5 ways to make your store sound better”" },
+    sketch: { src: artwork0Sketch, alt: "Constructive sketch for “5 ways to make your store sound better”" },
+  },
+  {
+    title: "3 things you didn’t know about background music",
+    mockup: { src: artwork1Mockup, alt: "Social media mockup of “3 things you didn’t know about background music”" },
+    final: { src: artwork1Final, alt: "A purple-haired presenter holding up three fingers in a restaurant, with the headline “3 things you didn’t know about background music”" },
+    sketch: { src: artwork1Sketch, alt: "Constructive sketch for “3 things you didn’t know about background music”" },
+  },
+  {
+    title: "The right sound for your pharmacy",
+    mockup: { src: artwork2Mockup, alt: "Social media mockup of “The right sound for your pharmacy”" },
+    final: { src: artwork2Final, alt: "A pharmacist playing the violin in front of medicine shelves, with the headline “The right sound for your pharmacy”" },
+    sketch: { src: artwork2Sketch, alt: "Constructive sketch for “The right sound for your pharmacy”" },
+  },
+];
+const gallery: IllustrationImage[] = [
+  { src: cover1, alt: "A character riding a large megaphone, with the headline “Take the reins of audio marketing”", caption: "Take the reins of audio marketing" },
+  { src: cover2, alt: "A waiter presenting a speaker on a tray to a seated customer, with the headline “Great sound. At your service.”", caption: "Great sound. At your service." },
+  { src: cover3, alt: "A character looking through a telescope from a ship’s lookout, with the headline “Audio marketing trends for 2026”", caption: "Audio marketing trends for 2026" },
+  { src: cover4, alt: "A gramophone horn emerging from a coffee cup beside a record player, with the headline “Find your café’s sound”", caption: "Find your café’s sound" },
+  { src: cover5, alt: "Restaurant diners seated along a winding musical staff, with the headline “Can music set the pace of a meal?”", caption: "Can music set the pace of a meal?" },
+  { src: cover6, alt: "A sleigh carrying speakers through a snowy scene, with the headline “New year. Good cheer. Great music.”", caption: "New year. Good cheer. Great music." },
+  { src: cover7, alt: "An open briefcase filled with banknotes and a megaphone, with the headline “Turn your in-store audio into ad space”", caption: "Turn your in-store audio into ad space" },
+  { src: cover8, alt: "A character arranging letter-shaped pieces around an orange sound symbol, with the headline “Under the hood of your music service”", caption: "Under the hood of your music service" },
+  { src: cover12, alt: "A character riding a flying broom with a musical note and megaphone, with the headline “Find the right music service for your business”", caption: "Find the right music service for your business" },
+  { src: cover13, alt: "A character riding a scooter past city buildings and musical notes, with the headline “The sound of summer: music trends”", caption: "The sound of summer: music trends" },
+  { src: cover14, alt: "Two characters reaching toward floating music and gift icons, with the headline “Your next great playlist starts here”", caption: "Your next great playlist starts here" },
+  { src: cover15, alt: "A character sitting on a large phone with a star on its screen, with the headline “Meet your store’s new music app”", caption: "Meet your store’s new music app" },
+  { src: cover16, alt: "A seated character holding a phone beside a large music-app screen, with the headline “Your store’s sound. In your hands.”", caption: "Your store’s sound. In your hands." },
+  { src: cover17, alt: "A character surrounded by phones, a speaker, and device-platform icons, with the headline “Different devices. One great sound.”", caption: "Different devices. One great sound." },
+  { src: cover18, alt: "A café worker beneath a coffee cup and musical symbols, with the headline “Put music on your café’s menu”", caption: "Put music on your café’s menu" },
+];
+---
+<IllustrationCaseLayout title="Zvuk social media illustrations" description={description} eyebrow="Zvuk / Social media illustration / 18 artworks">
+  <IllustrationProcessCollection artworks={artworks} label="Zvuk social media illustration processes" />
+
+  <section aria-labelledby="gallery-heading">
+    <div class="section-intro">
+      <h2 id="gallery-heading">The rest of the collection</h2>
+      <p>Fifteen more illustrated covers. Open any image for a closer look.</p>
+    </div>
+    <IllustrationGallery images={gallery} label="Zvuk social media illustration collection" />
+  </section>
+</IllustrationCaseLayout>
+<style>
+  .section-intro { margin-bottom:32px; max-width:62ch; }
+  h2 { font-size:var(--type-h2); margin-bottom:16px; }
+  .section-intro p { color:var(--muted); }
+  @media(max-width:700px) { h2 { font-size:calc(var(--type-body) * 1.777778); } }
+</style>

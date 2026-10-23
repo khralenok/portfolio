@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IllustrationProcess from '../components/IllustrationProcess.astro';
+import IllustrationGallery from '../components/IllustrationGallery.astro';
+import illustrations from '../images/selected/cryptonix-illustrations-54134e96.webp';
+import visuals from '../images/selected/cryptonix-visuals-11b9f60f.webp';
+import merchandise from '../images/selected/recovered-cryptonix-merchandise.webp';
+import zvuk from '../images/selected/zvuk-original-illustrations.webp';
+const images = [
+  { src: illustrations, alt: 'Cryptonix illustration collection', caption: 'Existing Cryptonix case-study artwork' },
+  { src: visuals, alt: 'Cryptonix brand visuals' },
+  { src: merchandise, alt: 'Cryptonix merchandise applications' },
+  { src: zvuk, alt: 'Zvuk illustration collection' },
+];
+---
+<Layout title="Illustration component examples — Grigorii Khralenok">
+  <article class="wrap examples">
+    <h1>Illustration component examples</h1>
+    <p>Existing portfolio assets demonstrate the controls. The Sketch and Mockup slots below use stand-in images, not a documented process sequence.</p>
+    <section><h2>Process viewer</h2><IllustrationProcess final={images[0]} sketch={{ ...images[1], caption: 'Sketch slot — existing brand visual used as a stand-in' }} mockup={images[2]} /></section>
+    <section><h2>Gallery</h2><IllustrationGallery images={images} /></section>
+    <section><h2>Independent viewers</h2><IllustrationProcess final={images[3]} sketch={images[0]} mockup={images[2]} aspectRatio="16 / 9" fit="cover" label="Second process example" /><IllustrationGallery images={images.slice(0, 2)} columns={2} gap="16px" label="Second gallery example" /></section>
+  </article>
+</Layout>
+<style>
+  .examples { padding-block:48px; }
+  h1 { font-size:var(--type-h1); margin-bottom:24px; }
+  h2 { font-size:var(--type-h2); margin-bottom:24px; }
+  section { margin-top:48px; }
+</style>
