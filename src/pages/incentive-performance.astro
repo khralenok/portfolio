@@ -1,0 +1,76 @@
+---
+import IllustrationCaseLayout from '../layouts/IllustrationCaseLayout.astro';
+import IllustrationProcessCollection from '../components/IllustrationProcessCollection.astro';
+import IllustrationGallery from '../components/IllustrationGallery.astro';
+import type { ProcessArtwork } from '../components/IllustrationProcessCollection.astro';
+import type { IllustrationImage } from '../components/illustration/images';
+
+import artwork0Mockup from '../images/liquidity-provider-editorial-illustrations/for-process/a-slice-of-liquidity-mockup.png';
+import artwork0Final from '../images/liquidity-provider-editorial-illustrations/for-process/a-slice-of-liquidity-final.png';
+import artwork0Sketch from '../images/liquidity-provider-editorial-illustrations/for-process/a-slice-of-liquidity-sketch.png';
+import artwork1Mockup from '../images/liquidity-provider-editorial-illustrations/for-process/the-limits-of-financial-freedom-mockup.png';
+import artwork1Final from '../images/liquidity-provider-editorial-illustrations/for-process/the-limits-of-financial-freedom-final.png';
+import artwork1Sketch from '../images/liquidity-provider-editorial-illustrations/for-process/the-limits-of-financial-freedom-sketch.png';
+import artwork2Mockup from '../images/liquidity-provider-editorial-illustrations/for-process/weaving-africas-payment-connections-mockup.png';
+import artwork2Final from '../images/liquidity-provider-editorial-illustrations/for-process/weaving-africas-payment-connections-final.png';
+import artwork2Sketch from '../images/liquidity-provider-editorial-illustrations/for-process/weaving-africas-payment-connections-sketch.png';
+import gallery0 from '../images/liquidity-provider-editorial-illustrations/for-gallery/when-payment-rails-lose-their-shape.png';
+import gallery1 from '../images/liquidity-provider-editorial-illustrations/for-gallery/the-squeeze-on-working-capital.png';
+import gallery2 from '../images/liquidity-provider-editorial-illustrations/for-gallery/closing-the-cross-border-gap.png';
+import gallery3 from '../images/liquidity-provider-editorial-illustrations/for-gallery/one-market-many-keys.png';
+import gallery4 from '../images/liquidity-provider-editorial-illustrations/for-gallery/the-liquidity-bottleneck.png';
+import gallery5 from '../images/liquidity-provider-editorial-illustrations/for-gallery/finding-balance-in-volatile-markets.png';
+import gallery6 from '../images/liquidity-provider-editorial-illustrations/for-gallery/separating-signal-from-settlement-noise.png';
+import gallery7 from '../images/liquidity-provider-editorial-illustrations/for-gallery/the-friction-between-markets.png';
+import gallery8 from '../images/liquidity-provider-editorial-illustrations/for-gallery/beneath-the-banking-system.png';
+
+const description = "Twelve editorial illustrations exploring liquidity, payment connections, and financial systems through everyday visual metaphors. A shared palette of blue, coral, and cream brings the collection together.";
+const artworks: ProcessArtwork[] = [
+  {
+    title: "A slice of liquidity",
+    mockup: { src: artwork0Mockup, alt: "Editorial application mockup of “A slice of liquidity”" },
+    final: { src: artwork0Final, alt: "A sliced loaf of bread on a blue cutting board, illustrated in textured blue, coral, and cream" },
+    sketch: { src: artwork0Sketch, alt: "Constructive sketch for “A slice of liquidity”" },
+  },
+  {
+    title: "The limits of financial freedom",
+    mockup: { src: artwork1Mockup, alt: "Editorial application mockup of “The limits of financial freedom”" },
+    final: { src: artwork1Final, alt: "A bird flying out of an open cage while tethered to a weight, illustrated in textured blue, coral, and cream" },
+    sketch: { src: artwork1Sketch, alt: "Constructive sketch for “The limits of financial freedom”" },
+  },
+  {
+    title: "Weaving Africa’s payment connections",
+    mockup: { src: artwork2Mockup, alt: "Editorial application mockup of “Weaving Africa’s payment connections”" },
+    final: { src: artwork2Final, alt: "Interwoven blue and coral ribbons forming a map of Africa, illustrated in textured blue, coral, and cream" },
+    sketch: { src: artwork2Sketch, alt: "Constructive sketch for “Weaving Africa’s payment connections”" },
+  },
+];
+const gallery: IllustrationImage[] = [
+  { src: gallery0, alt: "A bicycle with a square front wheel, illustrated in textured blue, coral, and cream", caption: "When payment rails lose their shape" },
+  { src: gallery1, alt: "A book held tightly between the jaws of a bench vise, illustrated in textured blue, coral, and cream", caption: "The squeeze on working capital" },
+  { src: gallery2, alt: "A zipper joining two separate strips, illustrated in textured blue, coral, and cream", caption: "Closing the cross-border gap" },
+  { src: gallery3, alt: "A padlock beside a ring of many differently cut keys, illustrated in textured blue, coral, and cream", caption: "One market, many keys" },
+  { src: gallery4, alt: "A funnel filled with stones releasing a narrow trickle, illustrated in textured blue, coral, and cream", caption: "The liquidity bottleneck" },
+  { src: gallery5, alt: "Three geometric kites tethered to a common anchor, illustrated in textured blue, coral, and cream", caption: "Finding balance in volatile markets" },
+  { src: gallery6, alt: "A sieve separating fine particles from larger stones, illustrated in textured blue, coral, and cream", caption: "Separating signal from settlement noise" },
+  { src: gallery7, alt: "A pencil passing through three sharpeners, surrounded by shavings, illustrated in textured blue, coral, and cream", caption: "The friction between markets" },
+  { src: gallery8, alt: "A cutaway view of a classical bank building and its underground foundations, illustrated in textured blue, coral, and cream", caption: "Beneath the banking system" },
+];
+---
+<IllustrationCaseLayout title="Liquidity Provider editorial illustrations" description={description} eyebrow="Liquidity Provider / Editorial illustration / 12 artworks">
+  <IllustrationProcessCollection artworks={artworks} label="Liquidity Provider illustration processes" />
+
+  <section aria-labelledby="gallery-heading">
+    <div class="section-intro">
+      <h2 id="gallery-heading">The rest of the collection</h2>
+      <p>Nine more editorial illustrations. Open any image for a closer look.</p>
+    </div>
+    <IllustrationGallery images={gallery} label="Liquidity Provider editorial illustration collection" />
+  </section>
+</IllustrationCaseLayout>
+<style>
+  .section-intro { margin-bottom:32px; max-width:62ch; }
+  h2 { font-size:var(--type-h2); margin-bottom:16px; }
+  .section-intro p { color:var(--muted); }
+  @media(max-width:700px) { h2 { font-size:calc(var(--type-body) * 1.777778); } }
+</style>
