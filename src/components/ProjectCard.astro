@@ -3,7 +3,7 @@ import { ArrowUpRight } from '@lucide/astro';
 import ProjectImage from './ProjectImage.astro';
 const { project, number, compact = false } = Astro.props;
 ---
-<a class:list={['project-card', { compact }]} href={`/${project.id}/`}>
+<a class:list={['project-card', { compact }]} href={project.url ?? `/${project.id}/`} target={project.url ? '_blank' : undefined} rel={project.url ? 'noopener noreferrer' : undefined}>
   <div class:list={['project-visual', project.color, project.id]}>
     <span class="visual-label">{project.client}</span>
     <ProjectImage sizes="(max-width:700px) calc(100vw - 40px), (max-width:1100px) calc((100vw - 94px) / 2), (max-width:1512px) calc((100vw - 142px) / 2), 685px" name={project.cover} alt={project.coverAlt ?? `${project.client} — ${project.category}`} />

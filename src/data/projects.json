@@ -38,5 +38,27 @@
     "color": "violet",
     "cover": "zvuk-social-media/for-process/5-ways-for-store-to-sound-better-mockup.png",
     "coverAlt": "Phone mockup displaying the Zvuk cover 5 Ways to Make Your Store Sound Better"
+  },
+  {
+    "id": "frontier-icons",
+    "url": "https://khralenok.github.io/frontier-icons/",
+    "client": "Personal",
+    "title": "Frontier Icons",
+    "summary": "An open-source library of 91 icons.",
+    "category": "Icons",
+    "color": "brown",
+    "cover": "frontier-icons/frontier-cover.png",
+    "coverAlt": "Retro desktop mockup displaying the Frontier Icons website"
+  },
+  {
+    "id": "poempotom",
+    "url": "https://khralenok.github.io/poempotom/",
+    "client": "Personal",
+    "title": "Poem Potom",
+    "summary": "An illustrated online poetry zine.",
+    "category": "Illustrations",
+    "color": "red",
+    "cover": "poempotom/poempotom-cover.png",
+    "coverAlt": "Desktop mockup in a workshop setting displaying the Poem Potom website"
   }
 ]
