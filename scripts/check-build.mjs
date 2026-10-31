@@ -7,7 +7,9 @@ const errors = [];
 const html = files(root).filter(path => extname(path) === '.html');
 for (const path of html) {
   const content = readFileSync(path, 'utf8');
-  if ((content.match(/<h1\b/g) || []).length !== 1) errors.push(`${path}: expected one h1`);
+  // Astro's static redirects contain a canonical URL and destination link, but no heading.
+  const isRedirect = /<meta http-equiv="refresh" content="0;url=[^"]+">/.test(content);
+  if (!isRedirect && (content.match(/<h1\b/g) || []).length !== 1) errors.push(`${path}: expected one h1`);
   if (!content.includes('rel="canonical"')) errors.push(`${path}: missing canonical`);
   for (const [, raw] of content.matchAll(/(?:href|src)="([^"]+)"/g)) {
     if (!raw.startsWith('/')) continue;
