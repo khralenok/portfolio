@@ -1,43 +1,14 @@
 [
   {
-    "id": "incentive-performance",
-    "client": "Liquidity Provider",
-    "title": "Editorial illustrations",
-    "summary": "Twelve editorial illustrations exploring liquidity, payment connections, and financial systems through everyday visual metaphors.",
-    "category": "Editorial illustration",
-    "color": "mint",
-    "cover": "liquidity-provider-editorial-illustrations/for-process/the-limits-of-financial-freedom-mockup.png",
-    "coverAlt": "Editorial mockup of The limits of financial freedom illustration"
-  },
-  {
-    "id": "cryptonix-sales",
-    "client": "Cryptonix",
-    "title": "Cryptonix sticker pack",
-    "summary": "Twelve crypto-themed stickers, pairing expressive characters with playful lettering.",
-    "category": "Sticker illustration",
-    "color": "orange",
-    "cover": "cryptonix-sticker/for-process/sticker-6-mockup.png",
-    "coverAlt": "Mockup of the Purr-cessing your payment cat sticker"
-  },
-  {
-    "id": "incentive-ugc",
-    "client": "Winshark",
-    "title": "Newsletter illustrations",
-    "summary": "Thirteen character-led email banners for Winshark.",
-    "category": "Newsletter illustration",
-    "color": "blue",
-    "cover": "winshark-retention-email/for-process/supercharge-mockup.png",
-    "coverAlt": "Tablet mockup displaying the Winshark Supercharge email banner"
-  },
-  {
-    "id": "zvuk",
-    "client": "Zvuk Business",
-    "title": "Social media illustrations",
-    "summary": "Eighteen illustrated covers about background music and audio marketing for Zvuk.",
-    "category": "Social media illustration",
-    "color": "violet",
-    "cover": "zvuk-social-media/for-process/5-ways-for-store-to-sound-better-mockup.png",
-    "coverAlt": "Phone mockup displaying the Zvuk cover 5 Ways to Make Your Store Sound Better"
+    "id": "kompo",
+    "url": "https://khralenok.github.io/kompo/",
+    "client": "Personal Project",
+    "title": "Kompo — Learn Composition",
+    "summary": "An interactive learning app that explores visual composition through abstract geometry, inspired by avant-garde art and design principles.",
+    "category": "Web App",
+    "color": "brown",
+    "cover": "kompo/kompo-cover.png",
+    "coverAlt": "Kompo composition learning app displayed on a desktop monitor in an architect's studio"
   },
   {
     "id": "frontier-icons",
@@ -49,6 +20,46 @@
     "color": "brown",
     "cover": "frontier-icons/frontier-cover.png",
     "coverAlt": "Retro desktop mockup displaying the Frontier Icons website"
+  },
+  {
+    "id": "editorial-illustration",
+    "client": "Liquidity Provider",
+    "title": "Editorial illustrations",
+    "summary": "Twelve editorial illustrations exploring liquidity, payment connections, and financial systems through everyday visual metaphors.",
+    "category": "Editorial illustration",
+    "color": "mint",
+    "cover": "liquidity-provider-editorial-illustrations/for-process/the-limits-of-financial-freedom-mockup.png",
+    "coverAlt": "Editorial mockup of The limits of financial freedom illustration"
+  },
+  {
+    "id": "cryptonix-sticker-pack",
+    "client": "Cryptonix",
+    "title": "Cryptonix sticker pack",
+    "summary": "Twelve crypto-themed stickers, pairing expressive characters with playful lettering.",
+    "category": "Sticker illustration",
+    "color": "orange",
+    "cover": "cryptonix-sticker/for-process/sticker-6-mockup.png",
+    "coverAlt": "Mockup of the Purr-cessing your payment cat sticker"
+  },
+  {
+    "id": "winshark-newsletter",
+    "client": "Winshark",
+    "title": "Newsletter illustrations",
+    "summary": "Thirteen character-led email banners for Winshark.",
+    "category": "Newsletter illustration",
+    "color": "blue",
+    "cover": "winshark-retention-email/for-process/supercharge-mockup.png",
+    "coverAlt": "Tablet mockup displaying the Winshark Supercharge email banner"
+  },
+  {
+    "id": "zvuk-social-media",
+    "client": "Zvuk Business",
+    "title": "Social media illustrations",
+    "summary": "Eighteen illustrated covers about background music and audio marketing for Zvuk.",
+    "category": "Social media illustration",
+    "color": "violet",
+    "cover": "zvuk-social-media/for-process/5-ways-for-store-to-sound-better-mockup.png",
+    "coverAlt": "Phone mockup displaying the Zvuk cover 5 Ways to Make Your Store Sound Better"
   },
   {
     "id": "poempotom",
