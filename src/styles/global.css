@@ -1113,7 +1113,7 @@ h1,h2,h3,.hero h1,.project-card h3,.case-brief h2,.case-section-heading h2,.diag
 .prose { font-size:var(--type-body); max-width:65ch; }
 .prose h2,.case-section-heading h2 { font-size:calc(var(--type-body) * 1.777778); }
 
-/* The title signals the card link; the cover label identifies the client. */
+/* The title signals the card link; the cover label identifies the project context. */
 .project-card h3 { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
 .project-card h3 span { text-decoration-color:transparent; text-underline-offset:.18em; transition:color .18s ease; }
 .project-title-arrow { flex-shrink:0; align-self:center; width:.8em; height:.8em; transition:transform .18s ease, color .18s ease; }
@@ -1122,7 +1122,7 @@ h1,h2,h3,.hero h1,.project-card h3,.case-brief h2,.case-section-heading h2,.diag
 .project-card:hover .project-title-arrow,.project-card:focus-visible .project-title-arrow { transform:translate(3px,-3px); }
 @media(prefers-reduced-motion:reduce) { .project-card h3 span,.project-title-arrow { transition:none; } .project-card:hover .project-title-arrow,.project-card:focus-visible .project-title-arrow { transform:none; } }
 
-/* Keep client badges above the transformed cover image on hover. */
+/* Keep project badges above the transformed cover image on hover. */
 .project-visual { isolation:isolate; }
 .visual-label { z-index:1; pointer-events:none; }
 

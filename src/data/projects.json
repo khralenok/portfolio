@@ -2,24 +2,26 @@
   {
     "id": "kompo",
     "url": "https://khralenok.github.io/kompo/",
-    "client": "Personal Project",
+    "client": "Personal project",
     "title": "Kompo — Learn Composition",
     "summary": "An interactive learning app that explores visual composition through abstract geometry, inspired by avant-garde art and design principles.",
-    "category": "Web App",
+    "category": "Interactive learning app",
     "color": "brown",
     "cover": "kompo/kompo-cover.png",
-    "coverAlt": "Kompo composition learning app displayed on a desktop monitor in an architect's studio"
+    "coverAlt": "Kompo composition learning app displayed on a desktop monitor in an architect's studio",
+    "context": "Personal project"
   },
   {
     "id": "frontier-icons",
     "url": "https://khralenok.github.io/frontier-icons/",
-    "client": "Personal",
+    "client": "Personal project",
     "title": "Frontier Icons — Explore the West",
     "summary": "An open-source library of 91 icons.",
-    "category": "Icons",
+    "category": "Icon library",
     "color": "brown",
     "cover": "frontier-icons/frontier-cover.png",
-    "coverAlt": "Retro desktop mockup displaying the Frontier Icons website"
+    "coverAlt": "Retro desktop mockup displaying the Frontier Icons website",
+    "context": "Personal project"
   },
   {
     "id": "editorial-illustration",
@@ -29,47 +31,52 @@
     "category": "Editorial illustration",
     "color": "mint",
     "cover": "liquidity-provider-editorial-illustrations/for-process/the-limits-of-financial-freedom-mockup.png",
-    "coverAlt": "Editorial mockup of The limits of financial freedom illustration"
+    "coverAlt": "Editorial mockup of The limits of financial freedom illustration",
+    "context": "Client project"
   },
   {
     "id": "cryptonix-sticker-pack",
     "client": "Cryptonix",
     "title": "Cryptonix — Crypto with Character",
     "summary": "Twelve crypto-themed stickers, pairing expressive characters with playful lettering.",
-    "category": "Sticker illustration",
+    "category": "Sticker design",
     "color": "orange",
     "cover": "cryptonix-sticker/for-process/sticker-6-mockup.png",
-    "coverAlt": "Mockup of the Purr-cessing your payment cat sticker"
+    "coverAlt": "Mockup of the Purr-cessing your payment cat sticker",
+    "context": "Client project"
   },
   {
     "id": "winshark-newsletter",
     "client": "Winshark",
     "title": "Winshark — Make a Splash",
     "summary": "Thirteen character-led email banners for Winshark.",
-    "category": "Newsletter illustration",
+    "category": "Email illustration",
     "color": "blue",
     "cover": "winshark-retention-email/for-process/supercharge-mockup.png",
-    "coverAlt": "Tablet mockup displaying the Winshark Supercharge email banner"
+    "coverAlt": "Tablet mockup displaying the Winshark Supercharge email banner",
+    "context": "Client project"
   },
   {
     "id": "zvuk-social-media",
     "client": "Zvuk Business",
-    "title": "Zvuk — The Shape of Sound",
-    "summary": "Eighteen illustrated covers about background music and audio marketing for Zvuk.",
+    "title": "Zvuk Business — The Shape of Sound",
+    "summary": "Eighteen illustrated covers about background music and audio marketing for Zvuk Business.",
     "category": "Social media illustration",
     "color": "violet",
     "cover": "zvuk-social-media/for-process/5-ways-for-store-to-sound-better-mockup.png",
-    "coverAlt": "Phone mockup displaying the Zvuk cover 5 Ways to Make Your Store Sound Better"
+    "coverAlt": "Phone mockup displaying the Zvuk Business cover 5 Ways to Make Your Store Sound Better",
+    "context": "Client project"
   },
   {
     "id": "poempotom",
     "url": "https://khralenok.github.io/poempotom/",
-    "client": "Personal",
+    "client": "Personal project",
     "title": "Poem Potom — Poetry Meets Illustration",
     "summary": "An illustrated online poetry zine.",
-    "category": "Illustrations",
+    "category": "Illustrated poetry zine",
     "color": "red",
     "cover": "poempotom/poempotom-cover.png",
-    "coverAlt": "Desktop mockup in a workshop setting displaying the Poem Potom website"
+    "coverAlt": "Desktop mockup in a workshop setting displaying the Poem Potom website",
+    "context": "Personal project"
   }
 ]
